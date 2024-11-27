@@ -32,18 +32,23 @@ trait Templates_Components {
     }
 
      // Content
-     protected static function content( $tab ) {
-        
-        if( $tab['tab_content_type'] != 'template' ) {
-            if( !empty( $tab['content'] ) ) {
+    protected static function content( $tab ) {
+        if ( $tab['tab_content_type'] != 'template' ) {
+            if ( !empty( $tab['content'] ) ) {
                 echo wpautop( wp_kses_post( $tab['content'] ) );
             }
         } else {
-            if( !empty( $tab['template_id'] ) ) {
-                echo \Enteraddons\Classes\Helper::elementor_content_display( absint( $tab['template_id'] ) );
+            if ( !empty( $tab['template_id'] ) ) {
+                $templates = \Enteraddons\Classes\Helper::getElementorTemplates();
+    
+                // Validate the template ID
+                if ( is_array( $templates ) && array_key_exists( $tab['template_id'], $templates ) ) {
+                    echo \Enteraddons\Classes\Helper::elementor_content_display( absint( $tab['template_id'] ) );                    
+                }
             }
         }
     }
+    
     
 
     

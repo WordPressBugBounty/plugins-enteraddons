@@ -81,7 +81,7 @@ trait Templates_Components {
                 echo '<ul>';
                     foreach( $settings['pricing_features'] as $features ) {
                         $title = !empty( $features['name'] ) ? $features['name'] : '';
-                        echo '<li class="elementor-repeater-item-' . $features['_id'] . '">'.\Enteraddons\Classes\Helper::getElementorIcon( $features['icon'] ).' '.esc_html( $title ).'</li>';
+                        echo '<li class="elementor-repeater-item-' .esc_attr( $features['_id'] ). '">'.\Enteraddons\Classes\Helper::getElementorIcon( $features['icon'] ).' '.esc_html( $title ).'</li>';
                     }
                 echo '</ul>';
             echo '</div>';

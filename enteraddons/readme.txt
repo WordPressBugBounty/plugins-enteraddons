@@ -2,11 +2,11 @@
 Contributors: ThemeLooks, rahi6039, faruqahmed190, looksweb, linkonomayer
 Donate link: https://themelooks.com/
 Tags: elementor addons, elementor widget, elements, addons, elementor
-Requires PHP: 7.4
+Requires PHP: 8.1
 Requires at least: 6.5
-Tested up to: 6.6.1
-Version: 2.1.9
-Stable tag: 2.1.9
+Tested up to: 6.7.1
+Version: 2.2.1
+Stable tag: 2.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -149,6 +149,13 @@ Yes
 
 
 == Change log ==
+= 2.2.1 =
+- Removed unnecessary comment.
+
+= 2.2.0 =
+- Fixed Security Issues caused by Advanced Tab and Pricing Table Widget
+- Fixed Similar Security Issues caused by some other widgets
+
 = 2.1.9 =
 - Fixed Security Issues caused by Event Card Widget
 - Fixed Similar Security Issues caused by some other widgets
