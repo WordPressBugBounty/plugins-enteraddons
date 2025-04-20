@@ -2,11 +2,11 @@
 Contributors: ThemeLooks, rahi6039, faruqahmed190, looksweb, linkonomayer
 Donate link: https://themelooks.com/
 Tags: elementor addons, elementor widget, elements, addons, elementor
-Requires PHP: 8.1
+Requires PHP: 7.4
 Requires at least: 6.5
-Tested up to: 6.7.1
-Version: 2.2.1
-Stable tag: 2.2.1
+Tested up to: 6.8
+Version: 2.2.2
+Stable tag: 2.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,7 +148,23 @@ Download "EnterAddons WordPress Plugin"  and then extract the zip file and just 
 Yes
 
 
+## Privacy Policy 
+Enter Addons - Ultimate Template Builder for Elementor uses [Appsero](https://appsero.com) SDK to collect some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
+
+Appsero SDK **does not gather any data by default.** The SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure a great user experience for all our users. 
+
+Integrating Appsero SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
+
+Learn more about how [Appsero collects and uses this data](https://appsero.com/privacy-policy/).
+
+
+
 == Change log ==
+
+= 2.2.2 =
+- Fixed WordPress 6.8 Compatibility issue
+- Added appsero to collect diagnostic data
+
 = 2.2.1 =
 - Removed unnecessary comment.
 
