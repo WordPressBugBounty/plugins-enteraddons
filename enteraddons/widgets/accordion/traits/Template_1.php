@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Enteraddons\Widgets\Accordion\Traits;
 /**
  * Enteraddons template class
@@ -11,44 +11,55 @@ namespace Enteraddons\Widgets\Accordion\Traits;
  *
  */
 
-trait Template_1 {
-    
-    public static function markup_style_1() {
+trait Template_1
+{
 
-        $settings   = self::getSettings();       
+    public static function markup_style_1()
+    {
+
+        $settings = self::getSettings();
+
+        $tag = 'h3'; // Default tag
+
+        if (!empty($settings['title_tag'])) {
+            // Check if the tag is allowed, case-insensitive
+            if (in_array(strtolower($settings['title_tag']), ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'], true)) {
+                $tag = $settings['title_tag'];
+            }
+        }
+
         ?>
         <div class="enteraddons-wid-con">
             <div class="enteraddons-accordion-style-1 enteraddons-faq">
-                <?php 
-                if( !empty( $settings['accordion'] ) ):
-                    foreach( $settings['accordion'] as $accordion ):
-                        $active = !empty( $accordion['accordion_active'] ) && $accordion['accordion_active'] == 'yes' ? ' active' : '';
-                ?>
-                <div class="enteraddons-single-faq <?php echo esc_attr( $active ); ?>" data-accordion-tab="toggle">
-                    <?php 
-                    if( !empty( $accordion['accordion_title'] ) ):
-                    ?>
-                    <h3 class="enteraddons-faq-title">
-                        <?php
-                        // Left Icon
-                        self::leftIcon();
-                        // Title Number Count
-                        self::numberCount();
-                        // Title
-                        echo esc_html( $accordion['accordion_title'] );
-                        // Right Icon
-                        self::rightIcon();
+                <?php
+                if (!empty($settings['accordion'])):
+                    foreach ($settings['accordion'] as $accordion):
+                        $active = !empty($accordion['accordion_active']) && $accordion['accordion_active'] == 'yes' ? ' active' : '';
                         ?>
-                    </h3>
-                    <?php
-                    endif;
-                    //
-                    if( !empty( $accordion['accordion_desc'] ) ) {
-                        echo '<div class="enteraddons-faq-content">'.wp_kses( $accordion['accordion_desc'], 'post' ).'</div>';
-                    }
-                    ?>
-                </div>
-                <?php 
+                        <div class="enteraddons-single-faq <?php echo esc_attr($active); ?>" data-accordion-tab="toggle">
+                            <?php
+                            if (!empty($accordion['accordion_title'])):
+
+                                echo '<' . tag_escape($tag) . ' class="enteraddons-faq-title">';
+                                // Left Icon
+                                self::leftIcon();
+                                // Title Number Count
+                                self::numberCount();
+                                // Title
+                                echo esc_html($accordion['accordion_title']);
+                                // Right Icon
+                                self::rightIcon();
+
+                                echo '</' . tag_escape($tag) . '>';
+
+                            endif;
+                            //
+                            if (!empty($accordion['accordion_desc'])) {
+                                echo '<div class="enteraddons-faq-content">' . wp_kses($accordion['accordion_desc'], 'post') . '</div>';
+                            }
+                            ?>
+                        </div>
+                        <?php
                     endforeach;
                 endif;
                 ?>

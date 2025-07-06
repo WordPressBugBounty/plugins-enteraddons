@@ -5,8 +5,8 @@ Tags: elementor addons, elementor widget, elements, addons, elementor
 Requires PHP: 7.4
 Requires at least: 6.5
 Tested up to: 6.8
-Version: 2.2.2
-Stable tag: 2.2.2
+Version: 2.2.3
+Stable tag: 2.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -160,6 +160,10 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 
 == Change log ==
+
+= 2.2.3 =
+- Added title tag change option on Info Box widget
+- Added title tag change option on Accordion widget
 
 = 2.2.2 =
 - Fixed WordPress 6.8 Compatibility issue
