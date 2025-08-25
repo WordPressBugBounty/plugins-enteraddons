@@ -54,8 +54,18 @@ trait Templates_Components {
 
     protected static function title() {
         $title = self::getSettings();
+
+        $tag = 'h5'; // Default tag
+        if (!empty($title['tag'])) {
+            // Check if the tag is allowed, case-insensitive
+            if (in_array(strtolower($title['tag']), [
+                'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'], true)) {
+                $tag = $title['tag'];
+            }
+        }
+
         if( !empty( $title['title'] ) ) {
-            echo '<h5 class="feature-card-title">'.esc_html( $title['title'] ).'</h5>';
+            echo '<' . tag_escape($tag) . ' class="feature-card-title">'.esc_html( $title['title'] ).'</' . tag_escape($tag) . '>';
         }
     }
 

@@ -16,6 +16,21 @@ trait Templates_Components {
     protected static function getSettings() {
         return self::getDisplaySettings();
     }
+    protected static function getTitleTag() {
+        
+        $tag = 'h5'; // Default tag
+        $settings = self::getSettings();
+
+        if (!empty($settings['tag'])) {
+            // Check if the tag is allowed, case-insensitive
+            if (in_array(strtolower($settings['tag']), ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'span', 'p'], true)) {
+                $tag = $settings['tag'];
+            }
+        }
+
+        return $tag;
+
+    }
     public static function tab_switcher() {
 
         $settings = self::getSettings();
@@ -31,7 +46,10 @@ trait Templates_Components {
     public static function title( $title = '' ) {
 
         if( !empty( $title ) ) {
-            return '<h5>'.esc_html( $title ).'</h5>';
+
+            $tag = self::getTitleTag();
+
+            return '<'.tag_escape($tag).' class="pricing-package-title">'.esc_html( $title ).'</'.tag_escape($tag).'>';
         }
     }
 

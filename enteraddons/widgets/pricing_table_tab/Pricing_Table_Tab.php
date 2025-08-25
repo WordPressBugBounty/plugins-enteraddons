@@ -97,6 +97,25 @@ class Pricing_Table_Tab extends Widget_Base {
                 ]
             ]
         );
+        $this->add_control(
+            'tag',
+            [
+                'label' => esc_html__( 'Set Title HTML Tag', 'enteraddons' ),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'h1' => 'H1',
+                    'h2' => 'H2',
+                    'h3' => 'H3',
+                    'h4' => 'H4',
+                    'h5' => 'H5',
+                    'h6' => 'H6',
+                    'span' => 'span',
+                    'p' => 'p',
+                    'div' => 'div'
+                ],
+                'default' => 'h5'
+            ]
+        );
         $this->end_controls_section(); // End
 
         // ---------------------------------------- Tab Items ------------------------------
@@ -684,7 +703,7 @@ class Pricing_Table_Tab extends Widget_Base {
                 'label' => esc_html__( 'Title Color', 'enteraddons' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .price-head h5' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .price-head .pricing-package-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -693,7 +712,7 @@ class Pricing_Table_Tab extends Widget_Base {
             [
                 'name' => 'title_typography',
                 'label' => esc_html__( 'Typography', 'enteraddons' ),
-                'selector' => '{{WRAPPER}} .price-head h5',
+                'selector' => '{{WRAPPER}} .price-head .pricing-package-title',
             ]
         );
         $this->add_responsive_control(
@@ -704,7 +723,7 @@ class Pricing_Table_Tab extends Widget_Base {
                 'devices' => [ 'desktop', 'tablet', 'mobile' ],
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .price-head h5' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .price-head .pricing-package-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -716,7 +735,7 @@ class Pricing_Table_Tab extends Widget_Base {
                 'devices' => [ 'desktop', 'tablet', 'mobile' ],
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .price-head h5' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .price-head .pricing-package-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -725,7 +744,7 @@ class Pricing_Table_Tab extends Widget_Base {
             [
                 'name' => 'pricing_table_title_border',
                 'label' => esc_html__( 'Border', 'enteraddons' ),
-                'selector' => '{{WRAPPER}} .price-head h5',
+                'selector' => '{{WRAPPER}} .price-head .pricing-package-title',
             ]
         );
         $this->add_responsive_control(
@@ -736,7 +755,7 @@ class Pricing_Table_Tab extends Widget_Base {
                 'devices' => [ 'desktop', 'tablet', 'mobile' ],
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
-                    '{{WRAPPER}} .price-head h5' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
+                    '{{WRAPPER}} .price-head .pricing-package-title' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};'
                 ],
             ]
         );
@@ -745,7 +764,7 @@ class Pricing_Table_Tab extends Widget_Base {
             [
                 'name' => 'pricing_table_title_shadow',
                 'label' => esc_html__( 'Box Shadow', 'enteraddons' ),
-                'selector' => '{{WRAPPER}} .price-head h5',
+                'selector' => '{{WRAPPER}} .price-head .pricing-package-title',
             ]
         ); 
         $this->add_group_control(
@@ -754,7 +773,7 @@ class Pricing_Table_Tab extends Widget_Base {
                 'name' => 'pricing_table_title_background',
                 'label' => esc_html__( 'Background', 'enteraddons' ),
                 'types' => [ 'classic', 'gradient' ],
-                'selector' => '{{WRAPPER}} .price-head h5',
+                'selector' => '{{WRAPPER}} .price-head .pricing-package-title',
             ]
         );
 
@@ -773,7 +792,7 @@ class Pricing_Table_Tab extends Widget_Base {
                 'label' => esc_html__( 'Hover Title Color', 'enteraddons' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .single-price.active .price-head h5' => 'color: {{VALUE}}'
+                    '{{WRAPPER}} .single-price.active .price-head .pricing-package-title' => 'color: {{VALUE}}'
                 ],
             ]
         );
