@@ -677,7 +677,7 @@ class Infobox extends Widget_Base
                 'label' => esc_html__('Title Color', 'enteraddons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box-content h5' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box-content .enteraddons-info-box-title' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -686,7 +686,7 @@ class Infobox extends Widget_Base
             [
                 'name' => 'title_typography',
                 'label' => esc_html__('Typography', 'enteraddons'),
-                'selector' => '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box-content h5',
+                'selector' => '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box-content .enteraddons-info-box-title',
             ]
         );
         $this->add_responsive_control(
@@ -697,7 +697,7 @@ class Infobox extends Widget_Base
                 'devices' => ['desktop', 'tablet', 'mobile'],
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box-content h5' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box-content .enteraddons-info-box-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -709,7 +709,7 @@ class Infobox extends Widget_Base
                 'devices' => ['desktop', 'tablet', 'mobile'],
                 'size_units' => ['px', '%', 'em'],
                 'selectors' => [
-                    '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box-content h5' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box-content .enteraddons-info-box-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -728,7 +728,7 @@ class Infobox extends Widget_Base
                 'label' => esc_html__('Title Hover Color', 'enteraddons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box:hover .enteraddons-info-box-content h5' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .enteraddons-wid-con .enteraddons-info-box:hover .enteraddons-info-box-content .enteraddons-info-box-title' => 'color: {{VALUE}}',
                 ],
             ]
         );

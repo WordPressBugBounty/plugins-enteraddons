@@ -62,7 +62,7 @@ trait Templates_Components
         }
 
         if (!empty($title['title'])) {
-            echo '<' . tag_escape($tag) . '>' . esc_html($title['title']) . '</' . tag_escape($tag) . '>';
+            echo '<' . tag_escape($tag) . ' class="enteraddons-info-box-title">' . esc_html($title['title']) . '</' . tag_escape($tag) . '>';
         }
     }
 
