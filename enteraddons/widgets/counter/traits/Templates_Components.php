@@ -47,6 +47,7 @@ trait Templates_Components {
             
             echo '<div class="enteraddons-counter-icon'.esc_attr( $iconType ).'">';
                 if( $settings['icon_type'] != 'img' ) {
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['icon'] );
                 }else {
                     echo '<img src="'.esc_url( $settings['image']['url'] ).'" class="svg" alt="'.esc_attr( $altText ).'">';

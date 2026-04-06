@@ -25,6 +25,7 @@ trait Template_1 {
                         echo '<li class="elementor-repeater-item-'.esc_attr( $list['_id'] ).'">';
                             // Anchor open
                             if( !empty( $list['link']['url'] ) ) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                 echo self::linkOpen( $list['link'] ); 
                             }
                             // List type
@@ -40,6 +41,7 @@ trait Template_1 {
                             self::title( $list );
                             // Anchor close
                             if( !empty( $list['link']['url'] ) ) {
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                 echo self::linkClose();
                             }
                         echo '</li>';

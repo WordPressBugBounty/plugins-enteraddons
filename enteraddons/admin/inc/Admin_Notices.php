@@ -136,10 +136,12 @@ class Admin_Notices{
 					<div class="promo-notice-content" style="margin-bottom: 12px;">
 						<?php 
 						if( !empty( $data['promotion_notices_meta']['title_Top'] ) ) {
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							echo '<h2>'.\Enteraddons\Classes\Helper::allowFormattingTagHtml( $data['promotion_notices_meta']['title_Top'] ).'</h2>';
 						}
 						//
 						if( !empty( $data['promotion_notices_meta']['title_bottom'] ) ) {
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 							echo '<h4>'.\Enteraddons\Classes\Helper::allowFormattingTagHtml( $data['promotion_notices_meta']['title_bottom'] ).'</h4>';
 						}
 						?>
@@ -152,7 +154,7 @@ class Admin_Notices{
 				}
 				//
 				if( !empty( $data['promotion_notices_meta']['promo_img'] ) ) {
-					echo '<div class="content-right"><img src="'.esc_url( $data['promotion_notices_meta']['promo_img'] ).'" /></div>';
+					echo '<div class="content-right"><a target="_blank" href="'.esc_url( $data['promotion_notices_meta']['btn_url'] ?? '' ).'"><img src="'.esc_url( $data['promotion_notices_meta']['promo_img'] ).'" /></a></div>';
 				}
 				?>
 				

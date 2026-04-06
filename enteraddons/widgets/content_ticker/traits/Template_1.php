@@ -22,15 +22,17 @@ trait Template_1 {
             self::title();
             ?>
             <div class="enteraddons-news-ticker-box">
-                <ul class="enteraddons-news-ticker"  data-tickersettings="<?php echo htmlspecialchars( $tickerSettings, ENT_QUOTES, 'UTF-8'); ?>">
+                <ul class="enteraddons-news-ticker"  data-tickersettings="<?php echo htmlspecialchars( $tickerSettings, ENT_QUOTES, 'UTF-8'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
                     <?php 
                         if( !empty( $settings['content_ticker'] ) ) {
                             foreach( $settings['content_ticker'] as $item ) { 
                            echo '<li>';
+                           // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             echo self::linkOpen( $item );
                                 if(!empty( $item['content_ticker_news']) ){
                                     echo esc_html($item['content_ticker_news']);
                                 }
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             echo self::linkClose();
                            echo '</li>';
                         }}

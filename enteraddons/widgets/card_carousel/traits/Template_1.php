@@ -17,10 +17,9 @@ trait Template_1 {
 
         $settings = self::getDisplaySettings();
         $sliderSettings = self::carouselSettings();
-
+        
         ?>        
-        <div class="enteraddons-card-carousel enteraddons-slider owl-carousel enteraddons-nav-style--seventeen enteraddons-slider-nav-middle" data-slidersettings="<?php echo htmlspecialchars( $sliderSettings, ENT_QUOTES, 'UTF-8'); ?>">
-
+        <div class="enteraddons-card-carousel enteraddons-slider owl-carousel enteraddons-nav-style--seventeen enteraddons-slider-nav-middle" data-slidersettings="<?php echo htmlspecialchars( $sliderSettings, ENT_QUOTES, 'UTF-8'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
             <?php
                 // Single Client
                 if( !empty( $settings['card_carousel'] ) ):

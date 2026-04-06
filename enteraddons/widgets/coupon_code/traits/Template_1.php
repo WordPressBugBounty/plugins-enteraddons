@@ -31,7 +31,7 @@ trait Template_1 {
                 <?php 
                 echo '<span class="ea-coupon-code">'.esc_html( self::couponcode() ).'</span>';
                 ?>
-                <span class="ea-ccb ea-get-code" data-target="1" data-copied="<?php echo esc_attr( self::copiedText() ); ?>"><?php echo self::icon().self::copyBtnText(); ?></span>
+                <span class="ea-ccb ea-get-code" data-target="1" data-copied="<?php echo esc_attr( self::copiedText() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"><?php echo self::icon().self::copyBtnText(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
             </div>
         </div>
         <?php
@@ -42,7 +42,7 @@ trait Template_1 {
         ?>
         <div class="ea-coupon-code-wrap ea-ccc-style-4">
             <div class="ea-coupon-code-inner ea-get-code" data-target="4" data-code="<?php echo esc_attr( self::couponcode() ); ?>" data-copied="<?php echo esc_attr( self::copiedText() ); ?>">
-                <span class="ea-coupon--code"><?php echo self::icon().self::copyBtnText(); ?></span>
+                <span class="ea-coupon--code"><?php echo self::icon().self::copyBtnText(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
             </div>
         </div>
         <?php

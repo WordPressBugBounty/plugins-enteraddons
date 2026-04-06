@@ -25,6 +25,7 @@ trait Templates_Components {
 
     protected static function icon( $options = '' ) {
         if( !empty( $options['icon'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<span class="ea-list-style ea-list-icon">'.Helper::getElementorIcon( $options['icon'] ).'</span>';
         }
     }

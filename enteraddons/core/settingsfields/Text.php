@@ -65,10 +65,10 @@ trait Text {
 		<div class="eap-admin-field <?php echo esc_attr( $args['wrapperclass'] ); ?>" data-condition="<?php echo esc_html($conditionData); ?>">
 			<h4><?php echo esc_html( $args['title'] ); ?></h4>
 			<div class="fb-field-group">
-			<input type="text" class="<?php echo esc_attr( $args['class'] ); ?>" name="<?php echo $fieldName; ?>" placeholder="<?php echo esc_attr( $args['placeholder'] ); ?>" value="<?php echo esc_attr( $value ); ?>" />
+			<input type="text" class="<?php echo esc_attr( $args['class'] ); ?>" name="<?php echo esc_attr( $fieldName ); ?>" placeholder="<?php echo esc_attr( $args['placeholder'] ); ?>" value="<?php echo esc_attr( $value ); ?>" />
 			<?php
 			if( !empty( $args['description'] ) ) {
-				echo '<p>'. $args['description'] .'</p>';
+				echo '<p>'. esc_html( $args['description'] ) .'</p>';
 			}
 			?>
 			</div>

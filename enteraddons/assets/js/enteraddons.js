@@ -89,6 +89,7 @@ Author url:     http://themelooks.com
 
             let $t          = $(e.target),
                 $getEmail   = $t.find('.newsletter-email-input').val(),
+                $nonce   = $t.find('[name="enteraddons_newsletter_nonce"]').val(),
                 $listId     = $t.data('list-id');
 
             $.ajax({
@@ -98,6 +99,7 @@ Author url:     http://themelooks.com
                 data: {
                   email: $getEmail,
                   list_id: $listId,
+                  nonce_id: $nonce,
                   action: 'mailchimp_action_fire'
                 },
                 success: function( data ){

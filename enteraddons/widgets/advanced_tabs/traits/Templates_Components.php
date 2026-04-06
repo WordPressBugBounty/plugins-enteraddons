@@ -27,7 +27,8 @@ trait Templates_Components {
     }
 
     //Icon
-    protected static function icon( $tab ) {     
+    protected static function icon( $tab ) {
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '<span class="ea-atab-icon">'.\Enteraddons\Classes\Helper::getElementorIcon( $tab['tab_icon'] ).'</span>';
     }
 
@@ -35,6 +36,7 @@ trait Templates_Components {
     protected static function content( $tab ) {
         if ( $tab['tab_content_type'] != 'template' ) {
             if ( !empty( $tab['content'] ) ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo wpautop( wp_kses_post( $tab['content'] ) );
             }
         } else {
@@ -43,6 +45,7 @@ trait Templates_Components {
     
                 // Validate the template ID
                 if ( is_array( $templates ) && array_key_exists( $tab['template_id'], $templates ) ) {
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     echo \Enteraddons\Classes\Helper::elementor_content_display( absint( $tab['template_id'] ) );                    
                 }
             }

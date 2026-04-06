@@ -65,7 +65,7 @@ trait MultipleSelect {
 		<div class="eap-admin-field" data-condition="<?php echo esc_html($conditionData); ?>">
 			<h4><?php echo esc_html( $args['title'] ); ?></h4>
 			<div class="fb-field-group">
-			<select name="<?php echo $fieldName; ?>[]" multiple>
+			<select name="<?php echo esc_attr( $fieldName ); ?>[]" multiple>
 				<?php
                 foreach( $args['options'] as  $key => $option ) {
 

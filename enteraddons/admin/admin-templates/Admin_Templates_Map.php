@@ -40,11 +40,6 @@ if( !class_exists( 'Admin_Templates_Map' ) ) {
 
 			echo '<div class="enteraddons-wrapper"><form id="enteraddons_settings_from" action="" method="post">';
 
-	            // check if the user have submitted the settings
-                if ( isset( $_GET['settings-updated'] ) ) {
-                // add settings saved message with the class of "updated"
-                add_settings_error( 'enteraddons_messages', 'enteraddons_message', esc_html__( 'Settings Saved', 'enteraddons' ), 'updated' );
-                }
                 //
                 settings_fields( 'enteraddons_settings_option_group' ); 
                 //
@@ -67,6 +62,8 @@ if( !class_exists( 'Admin_Templates_Map' ) ) {
 					$this->support_tab_content();
 					$this->premium_tab_content();
 				echo '</div>';
+                wp_nonce_field( 'enteraddons_settings_nonce_action', 'enteraddons_settings_nonce' );
+
 				// Save Buton
 				$this->save_button();
 			echo '</form></div>';

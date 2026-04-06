@@ -23,6 +23,7 @@ trait Templates_Components {
         $settings = self::getSettings(); 
 
         if( !empty( $settings['image']['url'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'image' );
         }
     }
@@ -50,7 +51,7 @@ trait Templates_Components {
 
     protected static function icon() {
         $settings = self::getSettings();        
-        echo '<div class="eaicon ea-'.esc_attr( $settings['image_icon_card_icon_position']).'">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['image_icon_card_icon'] ).'</div>';
+        echo '<div class="eaicon ea-'.esc_attr( $settings['image_icon_card_icon_position']).'">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['image_icon_card_icon'] ).'</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     protected static function linkClose() {

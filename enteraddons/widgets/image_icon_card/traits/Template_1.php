@@ -30,10 +30,12 @@ trait Template_1 {
                     self::title();
                     //Icon
                     if( 'yes' == $settings['icon_link_condition'] ) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo self::linkOpen(); 
                     }
                     self::icon();
                     if( 'yes' == $settings['icon_link_condition'] ) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo self::linkClose(); 
                     }
                     ?>

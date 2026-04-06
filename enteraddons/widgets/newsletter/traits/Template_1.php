@@ -25,6 +25,7 @@ trait Template_1 {
                 self::input();
                 // Button
                 self::searchButton();
+                wp_nonce_field( 'enteraddons_newsletter_nonce_action', 'enteraddons_newsletter_nonce' );
                 ?>
                 </div>
                 <div class="enteraddons-newsletter-response"></div>

@@ -785,7 +785,7 @@ class Vertical_Testimonial extends Widget_Base {
         $this->add_control(
             'ratings_star_icon_color',
             [
-                'label' => esc_html__( 'Color', 'enteraddonst' ),
+                'label' => esc_html__( 'Color', 'enteraddons' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .feedback-rating i' => 'color: {{VALUE}}',
@@ -795,7 +795,7 @@ class Vertical_Testimonial extends Widget_Base {
         $this->add_control(
             'ratings_star_active_icon_color',
             [
-                'label' => esc_html__( 'Active Color', 'enteraddonst' ),
+                'label' => esc_html__( 'Active Color', 'enteraddons' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .swiper-slide-active .feedback-rating i' => 'color: {{VALUE}}',
@@ -806,14 +806,14 @@ class Vertical_Testimonial extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ratings_star_border',
-                'label' => esc_html__( 'Border', 'enteraddonst' ),
+                'label' => esc_html__( 'Border', 'enteraddons' ),
                 'selector' => '{{WRAPPER}} .feedback-rating i',
             ]
         );
         $this->add_responsive_control(
             'ratings_star_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'enteraddonst' ),
+                'label' => esc_html__( 'Border Radius', 'enteraddons' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px','%' ],
                 'range' => [
@@ -836,7 +836,7 @@ class Vertical_Testimonial extends Widget_Base {
         $this->add_responsive_control(
             'ratings_star_margin',
             [
-                'label' => esc_html__( 'Margin', 'enteraddonst' ),
+                'label' => esc_html__( 'Margin', 'enteraddons' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -847,7 +847,7 @@ class Vertical_Testimonial extends Widget_Base {
         $this->add_responsive_control(
             'ratings_star_padding',
             [
-                'label' => esc_html__( 'Padding', 'enteraddonst' ),
+                'label' => esc_html__( 'Padding', 'enteraddons' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [

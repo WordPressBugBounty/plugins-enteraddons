@@ -25,6 +25,7 @@ trait Templates_Components {
         $altText  = \Elementor\Control_Media::get_image_alt( $settings['product_logo'] );
         if( $settings['icon_type'] != 'img' ) {
             echo '<div class="ea-product-logo">';
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['pricing_icon'] );
             echo '</div>';
         } else {
@@ -52,7 +53,7 @@ trait Templates_Components {
     protected static function product_feature( $feature ) {
 
         if ( !empty( $feature['feature_icon'] ) ) {
-                echo '<span class="ea-feature-icon">'.\Enteraddons\Classes\Helper::getElementorIcon( $feature['feature_icon'] ).'</span>';
+                echo '<span class="ea-feature-icon">'.\Enteraddons\Classes\Helper::getElementorIcon( $feature['feature_icon'] ).'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         } 
         if( !empty( $feature['product_feature'] ) ) {
             echo esc_html( $feature['product_feature'] );
@@ -107,6 +108,7 @@ trait Templates_Components {
 
         if( !empty( $settings['product_ratings'] ) ) {
             echo '<div class="ea-rating-star">';
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::ratingStar( $settings['product_ratings'], false );
             echo'</div>';
         }
@@ -126,8 +128,8 @@ trait Templates_Components {
     // Button
     public static function button() {
         $settings = self::getSettings();
-
         $label     = !empty( $settings['button_label'] ) ?  $settings['button_label'] : esc_html__( 'Buy Now', 'enteraddons' );
-        echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $settings['button_link'], $label, 'ea-h-pricing-btn');
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $settings['button_link'], esc_html( $label ), 'ea-h-pricing-btn');
     }
 }

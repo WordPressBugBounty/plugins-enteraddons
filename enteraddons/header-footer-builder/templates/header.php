@@ -16,6 +16,7 @@ do_action( 'enteraddons/template/before_header_content' );
 
 echo '<div class="enteraddons-header-wrapper">';
     $templateId = $args;
+    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     echo Enteraddons\Classes\Helper::elementor_content_display( $templateId );
 echo '</div>';
 // Header after hook

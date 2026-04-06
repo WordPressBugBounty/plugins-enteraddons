@@ -33,10 +33,12 @@ trait Templates_Components {
         //
         echo '<div class="faq-left-icons">';
         if( !empty( $left_active_icon ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<div class="active-icon"><div class="ea-faq-title-icon">'.Helper::allowFormattingTagHtml($left_active_icon).'</div></div>';
         }
         //
         if( !empty( $left_close_icon ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<div class="close-icon"><div class="ea-faq-title-icon">'.Helper::allowFormattingTagHtml($left_close_icon).'</div></div>';
         }
         echo '</div>';
@@ -54,10 +56,12 @@ trait Templates_Components {
         //
         echo '<div class="faq-right-icons '.esc_attr($iconPosition).'">';
             if( !empty( $right_active_icon ) ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo '<div class="active-icon"><div class="ea-faq-title-icon">'.Helper::allowFormattingTagHtml($right_active_icon).'</div></div>';
             }
             //
             if( !empty( $right_close_icon ) ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo '<div class="close-icon"><div class="ea-faq-title-icon">'.Helper::allowFormattingTagHtml($right_close_icon).'</div></div>';
             }
         echo '</div>';

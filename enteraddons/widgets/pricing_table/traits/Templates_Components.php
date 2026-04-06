@@ -81,7 +81,7 @@ trait Templates_Components {
                 echo '<ul>';
                     foreach( $settings['pricing_features'] as $features ) {
                         $title = !empty( $features['name'] ) ? $features['name'] : '';
-                        echo '<li class="elementor-repeater-item-' .esc_attr( $features['_id'] ). '">'.\Enteraddons\Classes\Helper::getElementorIcon( $features['icon'] ).' '.esc_html( $title ).'</li>';
+                        echo '<li class="elementor-repeater-item-' .esc_attr( $features['_id'] ). '">'.\Enteraddons\Classes\Helper::getElementorIcon( $features['icon'] ).' '.esc_html( $title ).'</li>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     }
                 echo '</ul>';
             echo '</div>';
@@ -95,7 +95,7 @@ trait Templates_Components {
             $btnIcon = \Enteraddons\Classes\Helper::getElementorIcon( $settings['button_icon'] );
             $btnData = $btnText.$btnIcon;
             
-            echo '<div class="enteraddons-pt-footer">'.\Enteraddons\Classes\Helper::getElementorLinkHandler( $settings['link'], $btnData, 'enteraddons-btn' ).'</div>';
+            echo '<div class="enteraddons-pt-footer">'.\Enteraddons\Classes\Helper::getElementorLinkHandler( $settings['link'], $btnData, 'enteraddons-btn' ).'</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
         
     }

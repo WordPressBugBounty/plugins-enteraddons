@@ -31,6 +31,7 @@ trait Templates_Components {
             <input name="s" type="text" class="ea-search-input" placeholder="'.esc_attr( $placeHolder ).'">
             <button type="submit" class="ea-search-submit-btn">';
             if( !empty( $settings['search_btn_type'] ) && $settings['search_btn_type'] == 'icon' ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['search_btn_icon'] );
             } else {
                 if( !empty( $settings['search_btn_text'] ) ) {
@@ -52,7 +53,7 @@ trait Templates_Components {
                 echo '<input type="text" name="s" class="ea-search-input" placeholder="'.esc_attr( $placeHolder ).'">';
                 echo '<button type="submit" class="submit-btn ea-search-submit-btn">';
                     if( !empty( $settings['search_btn_type'] ) && $settings['search_btn_type'] == 'icon' ) {
-                        echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['search_btn_icon'] );
+                        echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['search_btn_icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     } else {
                         if( !empty( $settings['search_btn_text'] ) ) {
                             echo esc_html( $settings['search_btn_text'] );

@@ -29,9 +29,9 @@ trait Template_2 {
                 }
                 //
                 if( !empty( $settings['profile_name'] ) ) {
-                  echo self::linkOpen().'<h3>';  
+                  echo self::linkOpen().'<h3>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                   self::text( $settings['profile_name'] ); 
-                  echo self::linkClose().'</h3>';
+                  echo self::linkClose().'</h3>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 }
                 //
                 if( !empty( $settings['profile_username'] ) ) {

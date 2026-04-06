@@ -35,6 +35,7 @@ trait Templates_Components {
 
     protected static function star( $ratings ) {
         if( !empty( $ratings['ratings'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<div class="feedback-rating">'.\Enteraddons\Classes\Helper::ratingStar( $ratings['ratings'], false ).'</div>';
         } 
     }

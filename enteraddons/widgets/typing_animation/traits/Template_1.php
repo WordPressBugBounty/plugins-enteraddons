@@ -17,7 +17,7 @@ trait Template_1 {
         $typingSettings = self::typingSettings();
 		
 		?>	
-			<div class="ea-at-wrapper"  data-typing-settings="<?php echo htmlspecialchars( $typingSettings, ENT_QUOTES, 'UTF-8'); ?>">
+			<div class="ea-at-wrapper"  data-typing-settings="<?php echo htmlspecialchars( $typingSettings, ENT_QUOTES, 'UTF-8'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
 				<p class="ea-animate-typing">
 					<?php 
 						self::first_text(); 

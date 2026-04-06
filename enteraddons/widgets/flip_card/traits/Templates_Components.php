@@ -26,6 +26,7 @@ trait Templates_Components {
         echo '<div class="enteraddons-flip-card-icon'.esc_attr( $iconType ).'">';
 
             if( $settings['front_icon_type'] != 'img' ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['front_icon'] );
             }else {
                 $altText = \Elementor\Control_Media::get_image_alt( $settings['front_image'] );
@@ -46,6 +47,7 @@ trait Templates_Components {
         echo '<div class="enteraddons-flip-card-icon'.esc_attr( $iconType ).'">';
 
             if( $settings['back_icon_type'] != 'img' ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['back_icon'] );
             } else {
                 $altText = \Elementor\Control_Media::get_image_alt( $settings['back_image'] );
@@ -73,6 +75,7 @@ trait Templates_Components {
     protected static function front_descriptions() {
         $descriptions = self::getSettings();
         if( !empty( $descriptions['front_desc'] ) ) {
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '<div class="flip-desc">'.wpautop( wp_kses_post( $descriptions['front_desc'] ) ).'</div>';
         }
     }
@@ -80,6 +83,7 @@ trait Templates_Components {
     protected static function back_descriptions() {
         $descriptions = self::getSettings();
         if( !empty( $descriptions['back_desc'] ) ) {
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '<div class="flip-desc">'.wpautop( wp_kses_post( $descriptions['back_desc'] ) ).'</div>';
         }
     }

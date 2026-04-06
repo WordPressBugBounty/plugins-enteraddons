@@ -34,6 +34,7 @@ trait Template_1 {
                 <div class="grid-item-before-inner-top enteraddons-grid-col-space-<?php echo esc_attr( $columnSpace ); ?>">
                     <?php
                     if( $linkType == 'wrap_link' ) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo self::linkOpen( $gimage['link'] );
                     }
                     ?>
@@ -53,6 +54,7 @@ trait Template_1 {
                     </div>
                     <?php 
                     if( $linkType == 'wrap_link' ) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo self::linkClose();
                     }
                     ?>

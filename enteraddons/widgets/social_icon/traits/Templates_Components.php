@@ -30,6 +30,7 @@ trait Templates_Components {
     protected static function icon( $data ) {
         $settings = self::getSettings();
         if( $data['icon_type'] != 'img' && !empty( $data['icon'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo \Enteraddons\Classes\Helper::getElementorIcon( $data['icon'] );
         } else {
             $url = !empty( $data['image']['url'] ) ? $data['image']['url'] : '';

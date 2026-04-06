@@ -62,8 +62,8 @@ trait MediaUpload {
 		<div class="eap-admin-field <?php echo esc_attr( $wrapTypeClass ); ?>" data-condition="<?php echo esc_html($conditionData); ?>">
 		    <h4><?php echo esc_html( $args['title'] ); ?></h4>
 		    <div class="fb-field-group">
-			    <input class="speedupkit_background_image" type="text" name="<?php echo $fieldName; ?>" value="<?php echo esc_attr( $value ); ?>" />
-			    <input type="button" class="speedupkit_image_upload_btn button-primary" value="<?php esc_html_e( 'Upload', 'enteraddons-pro' ) ?>" />
+			    <input class="speedupkit_background_image" type="text" name="<?php echo esc_attr( $fieldName ); ?>" value="<?php echo esc_attr( $value ); ?>" />
+			    <input type="button" class="speedupkit_image_upload_btn button-primary" value="<?php esc_html_e( 'Upload', 'enteraddons' ); ?>" />
 			    <?php 
 				if( !empty( $args['description'] ) ) {
 					echo '<p>'.esc_html( $args['description'] ).'</p>';

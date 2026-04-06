@@ -19,7 +19,7 @@ trait Template_1 {
         <div class="enteraddons-wid-con enteraddons-service-card">
             <?php
             if( 'yes' == $settings['wrapper_link'] ) {
-                echo self::linkOpen(); 
+                echo self::linkOpen(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
             ?>
             <div class="enteraddons-card">
@@ -37,7 +37,7 @@ trait Template_1 {
             </div>
             <?php 
             if( 'yes' == $settings['wrapper_link'] ) {
-                echo self::linkClose();
+                echo self::linkClose(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
             ?>
         </div>

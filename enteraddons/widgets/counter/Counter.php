@@ -102,19 +102,19 @@ class Counter extends Widget_Base {
         $this->add_control(
             'item_flex_alignment',
             [
-                'label' => esc_html__( 'Flex Alignment', 'enteraddons-pro' ),
+                'label' => esc_html__( 'Flex Alignment', 'enteraddons' ),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'flex-start' => [
-                        'title' => esc_html__( 'Start', 'enteraddons-pro' ),
+                        'title' => esc_html__( 'Start', 'enteraddons' ),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__( 'Center', 'enteraddons-pro' ),
+                        'title' => esc_html__( 'Center', 'enteraddons' ),
                         'icon' => 'eicon-h-align-center',
                     ],
                     'flex-end' => [
-                        'title' => esc_html__( 'End', 'enteraddons-pro' ),
+                        'title' => esc_html__( 'End', 'enteraddons' ),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],

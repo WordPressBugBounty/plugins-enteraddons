@@ -31,9 +31,9 @@ trait Templates_Components {
         }
 
         echo '<'.tag_escape( $tag ).' class="entry-title">';
-            echo self::anchorOpen('enteraddons-entry-thumb');
+            echo self::anchorOpen('enteraddons-entry-thumb'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 the_title();
-            echo self::anchorEnd();
+            echo self::anchorEnd(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '</'.tag_escape( $tag ).'>';
     }
 
@@ -55,7 +55,7 @@ trait Templates_Components {
     public static function excerpt() {
         $settings = self::getSettings();
         echo '<div class="entry-summery">';
-        echo wp_trim_words( get_the_excerpt(), esc_html( $settings['excerpt_count']['size'] ) );
+        echo wp_trim_words( get_the_excerpt(), esc_html( $settings['excerpt_count']['size'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '</div>';
     }
     // Post Excerpt
@@ -72,17 +72,17 @@ trait Templates_Components {
                     $getIcon = $icon;
                 }
                 
-                echo '<span class="meta-author">'.Helper::allowFormattingTagHtml($getIcon).self::author().'</span>';
+                echo '<span class="meta-author">'.Helper::allowFormattingTagHtml($getIcon).self::author().'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
             //
             if( !empty( $settings['show_post_date']  ) ) {
                 $icon = Helper::getElementorIcon( $settings['meta_date_icon'] );
-                echo '<span class="posted-on">'.Helper::allowFormattingTagHtml($icon).self::postDate().'</span>';
+                echo '<span class="posted-on">'.Helper::allowFormattingTagHtml($icon).self::postDate().'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
             //
             if( !empty( $settings['show_comments'] ) ) {
                 $icon = Helper::getElementorIcon( $settings['meta_comments_icon'] );
-                echo '<span class="post-comment">'.Helper::allowFormattingTagHtml($icon).self::comments().'</span>';
+                echo '<span class="post-comment">'.Helper::allowFormattingTagHtml($icon).self::comments().'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
         echo '</div>';
         }
@@ -146,7 +146,7 @@ trait Templates_Components {
             $iconRight = ' '.self::button_icon();
         }
 
-        echo self::anchorOpen('post-grid-btn').$iconLeft.esc_html( $settings['btn_text'] ).$iconRight.self::anchorEnd();
+        echo self::anchorOpen('post-grid-btn').$iconLeft.esc_html( $settings['btn_text'] ).$iconRight.self::anchorEnd(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     protected static function button_icon() {

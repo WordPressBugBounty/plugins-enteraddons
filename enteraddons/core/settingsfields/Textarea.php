@@ -62,7 +62,7 @@ trait Textarea {
 		<div class="eap-admin-field" data-condition="<?php echo esc_html($conditionData); ?>">
 			<h4><?php echo esc_html( $args['title'] ); ?></h4>
 			<div class="fb-field-group">
-			<textarea name="<?php echo $fieldName; ?>" ><?php echo esc_attr( $value ); ?></textarea>
+			<textarea name="<?php echo esc_attr( $fieldName ); ?>" ><?php echo esc_attr( $value ); ?></textarea>
 			<?php
 			if( !empty( $args['description'] ) ) {
 				echo '<p>'.esc_html( $args['description'] ).'</p>';

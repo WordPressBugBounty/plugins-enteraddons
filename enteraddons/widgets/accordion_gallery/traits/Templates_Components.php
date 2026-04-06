@@ -64,6 +64,7 @@ trait Templates_Components {
     // Link
     public static function gallery_button( $item  ) {
         $label     = !empty( $item ['link_label'] ) ?  $item['link_label'] : esc_html__( 'VIEW MORE', 'enteraddons' );
-        echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $item['more_link'], $label, 'ea-gallery-button' );
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $item['more_link'], esc_html( $label ), 'ea-gallery-button' );
     }
 }

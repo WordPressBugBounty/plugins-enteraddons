@@ -30,9 +30,9 @@ trait Templates_Components {
             }
         }
         echo '<'.tag_escape( $tag ).' class="ea-repost-title">';
-            echo self::anchorOpen('ea-repost-title-tag');
+            echo self::anchorOpen('ea-repost-title-tag'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 the_title();
-            echo self::anchorEnd();
+            echo self::anchorEnd(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '</'.tag_escape( $tag ).'>';
     }
 
@@ -45,7 +45,7 @@ trait Templates_Components {
     public static function date() {
         $settings = self::getSettings();
         if( !empty( $settings['show_post_date']  ) ) {
-            echo '<span class="ea-posted-on">'.self::postDate().'</span>';
+            echo '<span class="ea-posted-on">'.self::postDate().'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
         
     }

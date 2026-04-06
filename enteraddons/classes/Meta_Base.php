@@ -53,11 +53,12 @@ abstract class Meta_Base {
         if( !empty( $fields ) && is_array( $fields ) ) {
 
             foreach( $fields as $val ) {
-                $key = $val['name'];
+                $key = sanitize_text_field( $val['name'] );
                 $getVal = '';
                 if( !empty( $_POST[$key] ) ) {
-                    $getVal = $_POST[$key];
+                    $getVal = wp_unslash( $_POST[$key] );
                 }
+                
                 update_post_meta( absint( $post_id ), $key, $getVal );
             }
 

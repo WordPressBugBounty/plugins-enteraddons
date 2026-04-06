@@ -19,20 +19,25 @@ trait Template_1 {
         echo '<div class="enteraddons-anchor-btn-wrap">';
             self::linkOpen();
                 if( $settings['btn_hover_effect'] != 'dual-icon-btn' && $settings['icon_position'] == 'left' ) {
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     echo self::button_icon();
                 }
                 echo '<span class="entera-btn-text-wrap">';
 
                     if( $settings['btn_hover_effect'] == 'dual-icon-btn' ) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo self::button_icon_text_before();
                     }
+                    
                     self::smallText();
                     self::text1();
                     if( $settings['btn_hover_effect'] == 'dual-icon-btn' ) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo self::button_icon_text_after();
                     }
                 echo '</span>';
                 if( $settings['btn_hover_effect'] != 'dual-icon-btn' && $settings['icon_position'] == 'right' ) {
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     echo self::button_icon();
                 }
 

@@ -395,7 +395,7 @@ class Recent_Posts extends Widget_Base {
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'img_border',
-                'label' => esc_html__( 'Border', 'enteraddons-pro' ),
+                'label' => esc_html__( 'Border', 'enteraddons' ),
                 'selector' => '{{WRAPPER}} .ea-recent-posts .ea-repost-image',
             ]
         );

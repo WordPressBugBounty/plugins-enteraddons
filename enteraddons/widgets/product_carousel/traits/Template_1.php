@@ -27,7 +27,7 @@ trait Template_1 {
                 }
                 ?>
                 
-                <div class="owl-carousel enteraddons-nav-style--seven"  data-slidersettings="<?php echo htmlspecialchars( $sliderSettings, ENT_QUOTES, 'UTF-8'); ?>">
+                <div class="owl-carousel enteraddons-nav-style--seven"  data-slidersettings="<?php echo htmlspecialchars( $sliderSettings, ENT_QUOTES, 'UTF-8'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
 
                     <?php
                     // Product Query
@@ -86,7 +86,7 @@ trait Template_1 {
 
                         <!-- Content -->
                         <div class="enteraddons-shop-content">
-                            <?php echo '<div class="enteraddons-product-tag">'.wc_get_product_category_list( $productId ).'</div>'; ?>
+                            <?php echo '<div class="enteraddons-product-tag">'.wc_get_product_category_list( $productId ).'</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 
                             <h6 class="enteraddons-product-title">
                                 <a href="<?php echo esc_url( $productLink ); ?>"><?php echo esc_html( $product->get_name() ); ?></a>

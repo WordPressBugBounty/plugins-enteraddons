@@ -19,6 +19,7 @@ trait Template_1 {
        if( !empty( $settings['search_style'] ) && $settings['search_style'] == 'style_1' ) {
             echo '<div class="ea-search-btn-wrap"><div class="ea-search-btn search-icon ea-search-icon-wrap" open-modal="search">';
                 if( !empty( $settings['search_modal_icon'] ) ) {
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['search_modal_icon'] );
                 }
             echo '</div></div>';

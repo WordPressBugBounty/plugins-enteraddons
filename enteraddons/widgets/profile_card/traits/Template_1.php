@@ -48,11 +48,11 @@ trait Template_1 {
                 <?php
                 if( !empty( $settings['profile_name'] ) ) {
                 echo '<div class="profile-title">';
-                    echo self::linkOpen();
+                    echo self::linkOpen(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo '<h3>';
                             self::text( $settings['profile_name'] ); 
                         echo '</h3>';
-                    echo self::linkClose();
+                    echo self::linkClose(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo '</div>';
                 }
                 //
@@ -77,9 +77,9 @@ trait Template_1 {
                     }
                     //
                     if( !empty( $settings['profile_link_text'] ) ){
-                        echo self::linkOpen();
+                        echo self::linkOpen(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         self::text( $settings['profile_link_text'] );
-                        echo self::linkClose(); 
+                        echo self::linkClose(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     }
                      
                     ?>

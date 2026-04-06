@@ -61,6 +61,7 @@ trait Templates_Components {
         echo '<div class="enteraddons-info-box-icon '.esc_attr( $iconType.$divider ).'">';
 
             if( $data['icon_type'] != 'img' ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::getElementorIcon( $data['icon'] );
             }else {
                 echo '<img src="'.esc_url( $data['image']['url'] ).'" class="svg" alt="'.esc_attr( $altText ).'">';

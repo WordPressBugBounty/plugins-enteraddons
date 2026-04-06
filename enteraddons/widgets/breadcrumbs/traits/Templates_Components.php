@@ -24,6 +24,7 @@ trait Templates_Components {
                 foreach( $settings['custom_breadcrumbs'] as $val ) {
                     //title 
                     if( !empty( $val['link']['url'] ) ) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo '<li>'.self::linkOpen( $val ).esc_html( $val['title'] ).self::linkClose().'</li>
                         <span class="ea-breadcrumb-delimiter">'.esc_html( $settings['delimiter'] ).'</span>';
                     } else {

@@ -39,266 +39,266 @@ class Widgets_List extends \Enteraddons\Core\Base\Elements_Map {
 	public static function widgets_list_pro() {
         $wiggets = [
             [
-                'label'     => esc_html__( 'Accordion Tab', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Accordion Tab', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-accordion-tab',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Advanced Data Table', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Advanced Data Table', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-advance-data-table',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Marquee Image', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Marquee Image', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-marquee-image',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Team Carousel', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Team Carousel', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-team-carousel',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Product Category Carousel', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Product Category Carousel', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-category-carousel',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Product Category Grid', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Product Category Grid', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-category-grid',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Product Single Category', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Product Single Category', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-single-category',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Product Grid', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Product Grid', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-product-grid',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Photo Frame', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Photo Frame', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-photo-frame',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Source Code', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Source Code', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-source-code',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Mini Cart', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Mini Cart', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-mini-cart',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Masonry Gallery', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Masonry Gallery', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-masonry-gallery',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Image Swap', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Image Swap', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-image-swap',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( '360d Product Viewer', 'enteraddons-pro' ),
+                'label'     => esc_html__( '360d Product Viewer', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-product-viewer-360d',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Iframe', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Iframe', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-iframe',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Panorama Viewer', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Panorama Viewer', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-panorama',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Image Hover Effect', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Image Hover Effect', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-image-hover-effect',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Domain Search', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Domain Search', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-domain-search',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Comparison Table', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Comparison Table', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-comparison-table',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Modal Popup', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Modal Popup', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Banner Slider', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Banner Slider', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Bar Chart', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Bar Chart', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Creative Button', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Creative Button', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Infobox Carousel', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Infobox Carousel', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Line Chart', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Line Chart', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'PDF Viewer', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'PDF Viewer', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Pie Chart', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Pie Chart', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Polar Chart', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Polar Chart', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Post Carousel', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Post Carousel', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Promo Box', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Promo Box', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'QR and Barcode', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'QR and Barcode', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Radar Chart', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Radar Chart', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Single Image Scroll', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Single Image Scroll', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'unfold', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'unfold', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Circle Info Graphic', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Circle Info Graphic', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'NFT Carousel', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'NFT Carousel', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Filterable Gallery', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Filterable Gallery', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'NFT Gallery', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'NFT Gallery', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-modal-popup',
                 'demo_link' => '#',

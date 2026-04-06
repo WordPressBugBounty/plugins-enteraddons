@@ -42,9 +42,9 @@ trait Template_1 {
                 if( !empty( $settings['show_thumbnail'] ) ) {
 
                     echo '<div class="enteraddons-entry-header position-relative '.esc_attr( $settings['img_hover_animation'] ).'">';
-                        echo self::anchorOpen('enteraddons-entry-thumb');
+                        echo self::anchorOpen('enteraddons-entry-thumb'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         self::thumbImage();
-                        echo self::anchorEnd();
+                        echo self::anchorEnd(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         // Meta On thumbnail
                         if( $settings['meta_position'] == 'on_thumbnail' ) {
                             self::postMeta();

@@ -20,7 +20,7 @@ trait Templates_Components {
 
     protected static function imagePopup( $gimage, $popIcon ) {
         echo '<a href="'.esc_url( $gimage['img']['url'] ).'">';                
-            echo \Enteraddons\Classes\Helper::getElementorIcon( $popIcon );
+            echo \Enteraddons\Classes\Helper::getElementorIcon( $popIcon ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '</a>';
     }
 

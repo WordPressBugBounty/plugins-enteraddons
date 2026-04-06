@@ -26,7 +26,7 @@ trait Template_1 {
         $modifiedImg  = !empty( $settings['modified_image']['url'] ) ? $settings['modified_image']['url'] : '';
         $modifiedImgAltText = \Elementor\Control_Media::get_image_alt( $settings['modified_image'] );
 
-        echo '<div class="cd-image-container" data-orientation="'.esc_attr( $orientation ).'" data-original-text="'.esc_html( $originalText ).'" data-modified-text="'.esc_html( $modifiedText ).'">
+        echo '<div class="cd-image-container" data-orientation="'.esc_attr( $orientation ).'" data-original-text="'.esc_attr( wp_strip_all_tags( $originalText ) ).'" data-modified-text="'.esc_attr( wp_strip_all_tags( $modifiedText ) ).'">
                 <img src="'.esc_url( $originalImg ).'" alt="'.esc_attr( $originalImgAltText ).'">
                 <img src="'.esc_url( $modifiedImg ).'" alt="'.esc_attr( $modifiedImgAltText ).'">
             </div>';

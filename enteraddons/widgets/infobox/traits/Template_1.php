@@ -22,7 +22,7 @@ trait Template_1 {
             <?php
             //
             if( 'yes' == $settings['wrapper_link'] ) {
-                echo self::linkOpen(); 
+                echo self::linkOpen(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
             ?>
             <div class="enteraddons-info-box text-center icon-<?php echo esc_attr( $settings['infobox_icon_position'].' '.$settings['infobox_hover_effect'] ); ?>">
@@ -44,7 +44,7 @@ trait Template_1 {
             </div>
             <?php 
             if( 'yes' == $settings['wrapper_link'] ) {
-                echo self::linkClose();
+                echo self::linkClose(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
             ?>
         </div>

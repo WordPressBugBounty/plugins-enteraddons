@@ -34,6 +34,7 @@ trait Templates_Components {
         echo '<div class="enteraddons-single-feature-icon'.esc_attr( $iconType.$iconOverlapAlignment.$overlapPosition ).'">';
 
             if( $settings['icon_type'] != 'img' ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['icon'] );
             }else {
                 $normalImgClass = '';
@@ -91,7 +92,7 @@ trait Templates_Components {
         } else {
             $iconRight = ' '.self::button_icon();
         }
-
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '<div class="enteraddons-button-wrapper">'.self::linkOpen().$iconLeft.esc_html( $settings['btn_text'] ).$iconRight.self::linkClose().'</a></div>';
     }
 

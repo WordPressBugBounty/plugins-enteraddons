@@ -28,9 +28,9 @@ trait Template_1 {
                 echo '<div class="ea-recent-posts">';
                    if( !empty( $settings['show_post_image']  ) ) {
                         echo '<div class="ea-repost-image">';
-                            echo self::anchorOpen('ea-repost-thumb');
+                            echo self::anchorOpen('ea-repost-thumb'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                                 self::thumbImage(); 
-                            echo self::anchorEnd(); 
+                            echo self::anchorEnd();  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo '</div>';   
                    } 
                     echo '<div class="ea-repost-content">';

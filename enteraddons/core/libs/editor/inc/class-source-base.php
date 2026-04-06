@@ -51,7 +51,7 @@ class Library_Source extends Source_Base {
 	public function get_data( $getdata, $context = 'display' ) {
 		
 		if( empty( $getdata[0] ) || empty( $getdata[0]['content'] ) ) {
-			throw new \Exception( __( 'Template does not have any content', 'enteraddons' ) );
+			throw new \Exception( esc_html__( 'Template does not have any content', 'enteraddons' ) );
 		}
 
 		$data = $getdata[0];

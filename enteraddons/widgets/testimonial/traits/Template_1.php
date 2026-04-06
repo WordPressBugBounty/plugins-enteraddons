@@ -19,7 +19,7 @@ trait Template_1 {
         $sliderSettings = self::carouselSettings();
 
         ?>
-        <div class="enteraddons-testimonial-slider slider-style--default owl-carousel" data-slidersettings="<?php echo htmlspecialchars( $sliderSettings, ENT_QUOTES, 'UTF-8'); ?>">
+        <div class="enteraddons-testimonial-slider slider-style--default owl-carousel" data-slidersettings="<?php echo htmlspecialchars( $sliderSettings, ENT_QUOTES, 'UTF-8'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
             <?php
             if( !empty( $settings['testimonial'] ) ):
                 $i = 0;

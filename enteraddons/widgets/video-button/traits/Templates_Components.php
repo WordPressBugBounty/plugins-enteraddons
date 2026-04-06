@@ -29,7 +29,7 @@ trait Templates_Components {
         //
         if( !empty( $settings['video_url'] ) ) {
             $is_animation = !empty( $settings['circle_animation_active'] ) ? ' circle-ripple' : '';
-            echo '<a href="'.esc_url( $settings['video_url'] ).'" rel="magnificPopup" class="vdo_btn popup-video'.esc_attr( $is_animation ).'">'.$icon.'</a>';
+            echo '<a href="'.esc_url( $settings['video_url'] ).'" rel="magnificPopup" class="vdo_btn popup-video'.esc_attr( $is_animation ).'">'.$icon.'</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
         
     }

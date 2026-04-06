@@ -127,41 +127,41 @@ class Post_Type_Meta {
 
 	public static function save_postdata( $post_id ) {
 
-		$metaNonceCheck = isset( $_REQUEST['_ea_hf_meta_check'] ) ? $_REQUEST['_ea_hf_meta_check'] : '';
+		$metaNonceCheck = isset( $_REQUEST['_ea_hf_meta_check'] ) ? wp_unslash( $_REQUEST['_ea_hf_meta_check'] ) : '';
 
 		if( empty( $metaNonceCheck ) || !wp_verify_nonce( $metaNonceCheck, 'ea_hf_meta_verify' ) ) {
 			return;
 		}
 		
-		$status = !empty( $_POST['ea_hf_status'] ) ? $_POST['ea_hf_status'] : '';
+		$status = !empty( $_POST['ea_hf_status'] ) ? wp_unslash( $_POST['ea_hf_status'] ) : '';
 		update_post_meta(
 			absint( $post_id ),
 			'_ea_hf_status',
 			sanitize_text_field( $status )
 		);
 
-		$type = !empty( $_POST['ea_hf_type'] ) ? $_POST['ea_hf_type'] : '';
+		$type = !empty( $_POST['ea_hf_type'] ) ? wp_unslash( $_POST['ea_hf_type'] ) : '';
 		update_post_meta(
 			absint( $post_id ),
 			'_ea_hf_type',
 			sanitize_text_field( $type )
 		);
 
-		$useOn = !empty( $_POST['use_on_header'] ) ? $_POST['use_on_header'] : '';
+		$useOn = !empty( $_POST['use_on_header'] ) ? wp_unslash( $_POST['use_on_header'] ) : '';
 		update_post_meta(
 			absint( $post_id ),
 			'_ea_use_on_header',
 			sanitize_text_field( $useOn )
 		);
 
-		$excludePage = !empty( $_POST['exclude_page'] ) ? $_POST['exclude_page'] : [];
+		$excludePage = !empty( $_POST['exclude_page'] ) ? wp_unslash( $_POST['exclude_page'] ) : [];
 		update_post_meta(
 			absint( $post_id ),
 			'_ea_exclude_page',
 			sanitize_text_field( wp_json_encode( $excludePage ) )
 		);
 		
-		$show_onfof = !empty( $_POST['ea_hf_show_onfof'] ) ? $_POST['ea_hf_show_onfof'] : '';
+		$show_onfof = !empty( $_POST['ea_hf_show_onfof'] ) ? wp_unslash( $_POST['ea_hf_show_onfof'] ) : '';
 		update_post_meta(
 			absint( $post_id ),
 			'_ea_hf_show_onfof',
@@ -215,10 +215,10 @@ class Post_Type_Meta {
 	        	}
 	            break;
 	        case 'type' :
-	            echo get_post_meta( $post_id , '_ea_hf_type' , true ); 
+	            echo esc_html( get_post_meta( $post_id , '_ea_hf_type' , true ) ); 
 	            break;
 	        case 'use_on' :
-	            echo get_post_meta( $post_id , '_ea_use_on_header' , true ); 
+	            echo esc_html( get_post_meta( $post_id , '_ea_use_on_header' , true ) ); 
 	            break;
 	    }
 	}

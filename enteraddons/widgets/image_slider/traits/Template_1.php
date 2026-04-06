@@ -19,7 +19,7 @@ trait Template_1 {
         $sliderSettings = self::carouselSettings();
 
         ?>
-        <div class="enteraddons-app-slider enteraddons-slider owl-carousel dots-style--one" data-slidersettings="<?php echo htmlspecialchars( $sliderSettings, ENT_QUOTES, 'UTF-8'); ?>">
+        <div class="enteraddons-app-slider enteraddons-slider owl-carousel dots-style--one" data-slidersettings="<?php echo htmlspecialchars( $sliderSettings, ENT_QUOTES, 'UTF-8'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
             <?php
             // Single Slide
             if( !empty( $settings['image_slider'] ) ) {

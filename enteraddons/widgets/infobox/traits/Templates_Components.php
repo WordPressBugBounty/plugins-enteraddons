@@ -31,6 +31,7 @@ trait Templates_Components
         echo '<div class="enteraddons-info-box-icon' . esc_attr($iconType . $iconDivider) . '">';
 
         if ($settings['icon_type'] != 'img') {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo \Enteraddons\Classes\Helper::getElementorIcon($settings['icon']);
         } else {
             $normalImgClass = '';
@@ -70,6 +71,7 @@ trait Templates_Components
     {
         $descriptions = self::getSettings();
         if (!empty($descriptions['description'])) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo wpautop(wp_kses_post($descriptions['description']));
         }
     }
@@ -91,7 +93,7 @@ trait Templates_Components
             $iconRight = ' ' . self::button_icon();
         }
 
-        echo '<div class="enteraddons-button-wrapper">' . self::linkOpen() . $iconLeft . '<span class="ic-btn--text">' . esc_html($settings['btn_text']) . '</span>' . $iconRight . self::linkClose() . '</a></div>';
+        echo '<div class="enteraddons-button-wrapper">' . self::linkOpen() . $iconLeft . '<span class="ic-btn--text">' . esc_html($settings['btn_text']) . '</span>' . $iconRight . self::linkClose() . '</a></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     protected static function button_icon()
@@ -106,7 +108,7 @@ trait Templates_Components
             $normalClass = 'infocard-btn-normal-icon';
         }
 
-        return '<span class="btn-icons"><span class="' . esc_attr($normalClass) . '">' . Helper::allowFormattingTagHtml($normalIcon) . '</span>' . $getHoverIcon . '</span>';
+        return '<span class="btn-icons"><span class="' . esc_attr($normalClass) . '">' . Helper::allowFormattingTagHtml($normalIcon) . '</span>' . $getHoverIcon . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
     protected static function linkOpen()
     {

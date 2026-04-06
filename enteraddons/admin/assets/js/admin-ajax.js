@@ -20,8 +20,7 @@
       url: enteraddonsAdmin.ajaxurl,
       data: {
         action: 'settings_data_save_action',
-        data: $(this).serialize(),
-        nonce: enteraddonsAdmin.nonce
+        data: $(this).serialize()
       },
       beforeSend: function(){
         $saveButton.html('<div class="enteraddons-loader"></div>');

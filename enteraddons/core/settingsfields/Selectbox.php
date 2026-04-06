@@ -65,7 +65,7 @@ trait Selectbox {
 		<div class="eap-admin-field <?php echo esc_attr( $wrapTypeClass ); ?>" data-condition="<?php echo esc_html($conditionData); ?>">
 			<h4><?php echo esc_html( $args['title'] ); ?></h4>
 			<div class="fb-field-group">
-			<select name="<?php echo $fieldName; ?>">
+			<select name="<?php echo esc_attr( $fieldName ); ?>">
 				<?php 
           foreach( $args['options'] as  $key => $option ) {
             echo '<option value="'.esc_attr( $key ).'" '.selected( $value, $key, false ).'>'.esc_html( $option ).'</option>';

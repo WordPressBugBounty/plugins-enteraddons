@@ -159,8 +159,8 @@ class Typing_Animation extends Widget_Base {
 			[
 				'label' => esc_html__( 'Loop', 'enteraddons' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
-				'label_on' => esc_html__( 'Show', 'textdomain' ),
-				'label_off' => esc_html__( 'Hide', 'textdomain' ),
+				'label_on' => esc_html__( 'Show', 'enteraddons' ),
+				'label_off' => esc_html__( 'Hide', 'enteraddons' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
 			]

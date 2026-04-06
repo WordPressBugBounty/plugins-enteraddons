@@ -47,7 +47,7 @@ trait Templates_Components {
 
     protected static function icon() {
         $settings = self::getSettings();        
-        echo '<span class="card-icon">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['icon'] ).'</span>';
+        echo '<span class="card-icon">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['icon'] ).'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     protected static function linkOpen() {

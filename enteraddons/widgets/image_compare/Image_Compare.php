@@ -86,9 +86,6 @@ class Image_Compare extends Widget_Base {
             [
                 'label'     => esc_html__( 'Title', 'enteraddons' ),
                 'type'      => \Elementor\Controls_Manager::TEXT,
-                'dynamic' => [
-                    'active' => true,
-                ],
                 'default'   => esc_html__( 'Original', 'enteraddons' )
             ]
         );
@@ -118,9 +115,6 @@ class Image_Compare extends Widget_Base {
             [
                 'label'     => esc_html__( 'Title', 'enteraddons' ),
                 'type'      => \Elementor\Controls_Manager::TEXT,
-                'dynamic' => [
-                    'active' => true,
-                ],
                 'default'   => esc_html__( 'Modified', 'enteraddons' )
             ]
         );

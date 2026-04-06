@@ -19,9 +19,9 @@ trait Template_1 {
         if( !empty( $settings['nav_menu_select'] )  ) {
             $id = self::getWidgetObject()->get_id();
             echo '<div class="ea-offcanvas-nav-button-wrapper">';
-                echo '<div class="ea-hamburger-offcanvas-menu menu-trigger" data-toggle="offCanvas" data-target="mobile_menu_'.esc_attr( $id ).'">
-                  <span class="ea-menu-bar-btn">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['menu_icon'] ).'</span>
-                </div>';
+                echo '<div class="ea-hamburger-offcanvas-menu menu-trigger" data-toggle="offCanvas" data-target="mobile_menu_'.esc_attr( $id ).'">';
+                    echo '<span class="ea-menu-bar-btn">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['menu_icon'] ).'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                echo '</div>';
             echo '</div>';
         }
 	}

@@ -15,7 +15,7 @@ trait Template_1 {
     
     public static function markup_style_1() {
 
-        $settings       = self::getDisplaySettings();
+        $settings = self::getDisplaySettings();
 
         $perRowItem = !empty( $settings['per_row_item_number'] ) ? $settings['per_row_item_number'] : '';
 

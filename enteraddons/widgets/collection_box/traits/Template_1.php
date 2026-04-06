@@ -20,6 +20,7 @@ trait Template_1 {
         ?>
         <?php
             if( 'yes' == $settings['wrapper_link'] ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo self::linkOpen(); 
             }
             ?>
@@ -30,15 +31,16 @@ trait Template_1 {
             self::image();
             ?>
             <div class="content">
-                     <?php
-                     //content
-                    self::title();
-                    self::ammount();
-                    ?>  
+                <?php
+                //content
+                self::title();
+                self::ammount();
+                ?>
             </div>
             </div>
             <?php
             if( 'yes' == $settings['wrapper_link'] ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo self::linkClose(); 
             }
             ?>

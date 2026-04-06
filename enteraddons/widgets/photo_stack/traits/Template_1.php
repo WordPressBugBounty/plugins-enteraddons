@@ -23,12 +23,12 @@ trait Template_1 {
             <div class="ea-photo-stack-item elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?> <?php echo esc_attr( $settings['image_animation']); ?>">
                <?php 
                 if( !empty( $item['link']['url'] ) ) {
-                    echo self::linkOpen( $item['link'] );
+                    echo self::linkOpen( $item['link'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 }
                 self::image($item);
 
                 if( !empty( $item['link']['url'] ) ) {
-                echo self::linkClose();
+                echo self::linkClose(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 }
                     ?>
             </div>

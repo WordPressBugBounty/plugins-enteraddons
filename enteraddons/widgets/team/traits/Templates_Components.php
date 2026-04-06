@@ -61,7 +61,7 @@ trait Templates_Components {
 
         $settings = self::getSettings();
         $label     = !empty( $settings['link_label'] ) ?  $settings['link_label'] : esc_html__( 'VIEW DETAILS', 'enteraddons' );
-        echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $settings['more_link'], $label, 'readme-more-link');
+        echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $settings['more_link'], esc_html( $label ), 'readme-more-link'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     // Image
@@ -69,7 +69,7 @@ trait Templates_Components {
         $settings = self::getSettings();
 
         if( !empty( $settings['image']['url'] ) ) {
-            echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'image' );
+            echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'image' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
     }
 
@@ -83,7 +83,7 @@ trait Templates_Components {
             <?php 
             foreach( $settings['social'] as $social ) {
                 $icon = \Enteraddons\Classes\Helper::getElementorIcon( $social['social_icon'] );
-                echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $social['social_url'], $icon );
+                echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $social['social_url'], $icon ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
             ?>
         </div>

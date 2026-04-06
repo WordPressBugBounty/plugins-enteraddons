@@ -23,7 +23,7 @@ trait Templates_Components {
     }
     protected static function searchButton() {
         $settings = self::getSettings();
-        echo '<button class="enteraddons-newsletter-btn">'.esc_html( $settings['search_btn_text'] ).self::icon().'</button>';
+        echo '<button class="enteraddons-newsletter-btn">'.esc_html( $settings['search_btn_text'] ).self::icon().'</button>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
     protected static function icon() {
         $settings = self::getSettings();

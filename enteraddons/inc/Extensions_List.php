@@ -35,56 +35,56 @@ class Extensions_List extends \Enteraddons\Core\Base\Elements_Map {
 	public static function extensions_list_pro() {
         $extensions = [
             [
-                'label'     => esc_html__( 'Header & Footer Snippets', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Header & Footer Snippets', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-source-code',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Accessibilities', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Accessibilities', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-accessibilities',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Speedup', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Speedup', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-speedup',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Image Compressor', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Image Compressor', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-image-compressor',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Webp Converter', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Webp Converter', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-webp-converter',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Url Shortener', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Url Shortener', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-url-shortener',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Maintenance Mode', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Maintenance Mode', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-maintenance-mode',
                 'demo_link' => '#',
                 'is_pro'    => true
             ],
             [
-                'label'     => esc_html__( 'Woo Builder', 'enteraddons-pro' ),
+                'label'     => esc_html__( 'Woo Builder', 'enteraddons' ),
                 'name'      => '',
                 'icon'      => 'entera entera-maintenance-mode',
                 'demo_link' => '#',

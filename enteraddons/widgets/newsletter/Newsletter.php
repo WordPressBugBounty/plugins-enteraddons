@@ -52,9 +52,17 @@ class Newsletter extends Widget_Base {
 
             if( !empty( $serverType[1] ) ) {
 
-                $apiUrl = 'https://'.esc_attr($serverType[1]).'.api.mailchimp.com/3.0/lists?apikey='.$apiKey;
+                $server  = esc_attr($serverType[1]); // the part after the hyphen in the API key
+                $url = "https://{$server}.api.mailchimp.com/3.0/lists/";
 
-                $getResponse = wp_remote_get($apiUrl, []);
+                $args = [
+                    'headers' => [
+                        'Authorization' => 'Basic ' . base64_encode('mailchimp:' . $apiKey)
+                    ]
+                ];
+                
+                //
+                $getResponse = wp_remote_get( $url, $args );
 
                 if ( is_array( $getResponse ) && ! is_wp_error( $getResponse ) ) {
                     $headers = $getResponse['headers']; 

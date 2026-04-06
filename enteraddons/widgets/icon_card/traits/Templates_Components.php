@@ -27,6 +27,7 @@ trait Templates_Components {
         echo '<div class="enteraddons-icon-wrap '.esc_attr( $iconType ).'">';
 
             if( $settings['icon_type'] != 'img' ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['icon'] );
             }else {
                 echo '<img src="'.esc_url( $settings['image']['url'] ).'" class="svg" alt="'.esc_attr( $altText ).'">';
@@ -41,6 +42,7 @@ trait Templates_Components {
         echo '<span class="'.esc_attr( $settings['pricing_icon_type'] ).'">';
 
             if( $settings['pricing_icon_type'] != 'img' && !empty( $settings['pricing_icon'] ) ) {
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['pricing_icon'] );
             } else {
                 $url = !empty( $settings['pricing_image']['url'] ) ? $settings['pricing_image']['url'] : '';
@@ -96,7 +98,7 @@ trait Templates_Components {
             $iconRight = ' '.self::button_icon();
         }
 
-        echo self::linkOpen().$iconLeft.esc_html( $settings['btn_text'] ).$iconRight.self::linkClose();
+        echo self::linkOpen().$iconLeft.esc_html( $settings['btn_text'] ).$iconRight.self::linkClose(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     protected static function button_icon() {

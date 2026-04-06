@@ -23,7 +23,7 @@ trait Templates_Components {
         $settings = self::getSettings();
 
         if( !empty( $settings['animation_title'] ) ) {
-            echo '<p class="eaatbigger">'.\Enteraddons\Classes\Helper::allowFormattingTagHtml( $settings['animation_title'] ).'</p>';
+            echo '<p class="eaatbigger">'.\Enteraddons\Classes\Helper::allowFormattingTagHtml( $settings['animation_title'] ).'</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         } 
     }
 

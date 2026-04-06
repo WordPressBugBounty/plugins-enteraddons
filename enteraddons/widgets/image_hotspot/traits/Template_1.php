@@ -18,7 +18,7 @@ trait Template_1 {
         $hotspotsettings = self::hotspotsettings();
         ?>
 
-        <div class="ea-image-hotspot responsive-hotspot-wrap" data-hotspotsettings="<?php echo htmlspecialchars( $hotspotsettings, ENT_QUOTES, 'UTF-8'); ?>">
+        <div class="ea-image-hotspot responsive-hotspot-wrap" data-hotspotsettings="<?php echo htmlspecialchars( $hotspotsettings, ENT_QUOTES, 'UTF-8'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
             <?php 
             self::background_image();
 

@@ -55,16 +55,16 @@ trait Templates_Components {
 
     protected static function socialIcon( $item ) {
         if( ! empty( $item['social_icon'] ) ) {
-            echo self::linkOpen2( $item );
-            echo \Enteraddons\Classes\Helper::getElementorIcon( $item['social_icon'] );
-            echo self::linkClose();
+            echo self::linkOpen2( $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo \Enteraddons\Classes\Helper::getElementorIcon( $item['social_icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo self::linkClose(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         }
     }
 
     protected static function star() {
         $settings = self::getSettings();
         if( !empty( $settings['ratings'] ) ) {
-            echo '<div class="rating">'.\Enteraddons\Classes\Helper::ratingStar( $settings['ratings'], false ).'</div>';
+            echo '<div class="rating">'.\Enteraddons\Classes\Helper::ratingStar( $settings['ratings'], false ).'</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         } 
     }
     

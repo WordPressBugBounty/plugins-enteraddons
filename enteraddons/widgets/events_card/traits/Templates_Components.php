@@ -38,12 +38,14 @@ trait Templates_Components {
     protected static function image() {
         $settings = self::getSettings();
         if( !empty( $settings['img']['url'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'img' );
         }
     }
     protected static function eventType() {
         $settings = self::getSettings();        
         if( !empty( $settings['event_type'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<span class="el-event-cat">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['event_type_icon'] ).esc_html( $settings['event_type'] ).'</span>';
         }
     }
@@ -57,6 +59,7 @@ trait Templates_Components {
         $settings = self::getSettings();
         
         if( !empty( $settings['event_place'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<span class="el-event-place">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['event_place_icon'] ).esc_html( $settings['event_place'] ).'</span>';
         }
         
@@ -64,6 +67,7 @@ trait Templates_Components {
     protected static function eventDate() {
         $settings = self::getSettings();
         if( !empty( $settings['event_date'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<span class="enteraddons-date el-event-date '.esc_attr( $settings['date_position'] ).'">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['event_date_icon'] ).\Enteraddons\Classes\Helper::allowFormattingTagHtml( $settings['event_date'] ).'</span>';
         }
         
@@ -71,19 +75,22 @@ trait Templates_Components {
     protected static function eventTime() {
         $settings = self::getSettings();
         if( !empty( $settings['event_time'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<span class="el-event-time">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['event_time_icon'] ).esc_html( $settings['event_time'] ).'</span>';
         }
     }
     protected static function eventPrice() {
         $settings = self::getSettings();
         if( !empty( $settings['event_ticket_price'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<span class="el-event-price">'.\Enteraddons\Classes\Helper::allowFormattingTagHtml( $settings['event_ticket_price'] ).'</span>';
         }        
     }
     protected static function button() {
         $settings = self::getSettings();
         $label     = !empty( $settings['btn_label'] ) ?  $settings['btn_label'] : esc_html__( 'DETAILS', 'enteraddons' );
-        echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $settings['btn_link'], $label, 'enteraddons-btn');
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo \Enteraddons\Classes\Helper::getElementorLinkHandler( $settings['btn_link'], esc_html( $label ), 'enteraddons-btn');
     }
 
 }

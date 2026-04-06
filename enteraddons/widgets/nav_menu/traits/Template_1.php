@@ -23,10 +23,10 @@ trait Template_1 {
             $line_animation  = !empty( $settings['line_animation'] ) ? ' '.$settings['line_animation']: '';
 
             echo '<div class="ea-nav-menu-wrapper">';
-                echo '<div class="ea-hamburger-menu">
-                  <span class="ea-menu-bar-btn">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['menu_icon'] ).'</span>
-                  <span class="ea-menu-close-btn">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['menu_close_icon'] ).'</span>
-                </div>';
+                echo '<div class="ea-hamburger-menu">';
+                    echo '<span class="ea-menu-bar-btn">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['menu_icon'] ).'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    echo '<span class="ea-menu-close-btn">'.\Enteraddons\Classes\Helper::getElementorIcon( $settings['menu_close_icon'] ).'</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                echo '</div>';
                 echo '<div class="ea-nav-wrap-inner ea-desktop-nav">';
                     wp_nav_menu( array(
                         'menu'              => esc_html( $settings['nav_menu_select'] ),

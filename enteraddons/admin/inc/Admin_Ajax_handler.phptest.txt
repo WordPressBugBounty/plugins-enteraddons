@@ -1,0 +1,8 @@
+Array
+(
+    [enteraddons_widgets] => Array
+        (
+            [0] => hacked
+        )
+
+)

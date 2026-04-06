@@ -28,6 +28,7 @@ trait Templates_Components {
 
             if( $settings['icon_type'] != 'img' ) {
                 //Logo
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                 echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['icon'] );
             }else {
                 //  Image

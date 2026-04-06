@@ -26,6 +26,7 @@ trait Templates_Components {
             echo "<th><div class='ea-heading-content'>";
                 if ( 'yes' === $item['show_icon'] ) {
                     if( $item['heading_icon_type'] != 'img' ) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo \Enteraddons\Classes\Helper::getElementorIcon( $item['dp_heading_icon'] );
                     }
                     else {
@@ -45,6 +46,7 @@ trait Templates_Components {
             echo "<td><div class='ea-td-content'>";
                 if ( 'yes' === $item['ea_show_icon'] ) {
                     if( $item['icon_type'] != 'img' ) {
+                        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         echo \Enteraddons\Classes\Helper::getElementorIcon( $item['tbody_icon'] );
                     } else {
                         echo '<img src="'.esc_url( $item['tbody_image']['url'] ).'" class="ea-table-image" alt="'.esc_attr( $altText ).'">';

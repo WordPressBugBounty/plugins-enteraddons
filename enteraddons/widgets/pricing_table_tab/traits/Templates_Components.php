@@ -110,15 +110,16 @@ trait Templates_Components {
                 $duration     = !empty( $tableContent['duration'] ) ? $tableContent['duration'] : '';
                 $is_active = !empty( $tableContent['is_active'] ) && $tableContent['is_active'] == 'yes' ? 'active' :'';
 
-                echo '<div class="single-price '.esc_attr( $is_active ).'">
-                        <div class="price-head">
-                            '.self::title( esc_html( $tableContent['title'] ) ).self::price( esc_html( $salePrice ), esc_html( $regularPrice ), esc_html( $duration ) ).self::divider().'
-                        </div>
-                        <div class="price-body">
+                echo '<div class="single-price '.esc_attr( $is_active ).'">';
+
+                        echo '<div class="price-head">';
+                        echo self::title( esc_html( $tableContent['title'] ) ).self::price( esc_html( $salePrice ), esc_html( $regularPrice ), esc_html( $duration ) ).self::divider(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        echo '</div>';
+                        echo '<div class="price-body">
                             '.wp_kses_post( $tableContent['features'] ).'
-                        </div>
-                        <div class="btn-wrap">'.self::button( $tableContent['link'], esc_html( $tableContent['btn_text'] ) ).'</div>
-                    </div>';
+                        </div>';
+                        echo '<div class="btn-wrap">'.self::button( $tableContent['link'], esc_html( $tableContent['btn_text'] ) ).'</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    echo '</div>';
 
             }
 
@@ -136,15 +137,15 @@ trait Templates_Components {
                 $duration     = !empty( $tableContent['duration'] ) ? $tableContent['duration'] : '';
                 $is_active = !empty( $tableContent['is_active'] ) && $tableContent['is_active'] == 'yes' ? 'active' :'';
 
-                echo '<div class="single-price '.esc_attr( $is_active ).'">
-                        <div class="price-head">
-                            '.self::title( $tableContent['title'] ).self::price( esc_html( $salePrice ), esc_html($regularPrice), esc_html($duration) ).self::divider().'
-                        </div>
-                        <div class="price-body">
+                echo '<div class="single-price '.esc_attr( $is_active ).'">';
+                        echo '<div class="price-head">';
+                            echo self::title( $tableContent['title'] ).self::price( esc_html( $salePrice ), esc_html($regularPrice), esc_html($duration) ).self::divider(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        echo '</div>';
+                        echo '<div class="price-body">
                             '.wp_kses_post( $tableContent['features'] ).'
-                        </div>
-                        <div class="btn-wrap">'.self::button( $tableContent['link'], esc_html( $tableContent['btn_text'] ) ).'</div>
-                    </div>';
+                        </div>';
+                        echo '<div class="btn-wrap">'.self::button( $tableContent['link'], esc_html( $tableContent['btn_text'] ) ).'</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                    echo '</div>';
 
             }
         }

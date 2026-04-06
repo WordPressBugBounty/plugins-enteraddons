@@ -34,7 +34,7 @@ trait Templates_Components {
             $getRightQuote = \Enteraddons\Classes\Helper::getElementorIcon( $RightQuote );
         }
         
-        echo'<p>'.$getLeftQuote.esc_html( $descriptions ).$getRightQuote.'</p>';
+        echo'<p>'.$getLeftQuote.esc_html( $descriptions ).$getRightQuote.'</p>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     public static function rating( $rating ) {

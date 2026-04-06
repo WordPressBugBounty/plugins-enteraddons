@@ -1040,7 +1040,7 @@ class Infobox extends Widget_Base
         $this->add_control(
             'ribbon_text_color',
             [
-                'label' => esc_html__('Text Color', 'enteraddons-pro'),
+                'label' => esc_html__('Text Color', 'enteraddons'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .infobox-card-ribbon' => 'color: {{VALUE}}',
@@ -1051,7 +1051,7 @@ class Infobox extends Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'ribbon_typography',
-                'label' => esc_html__('Typography', 'enteraddons-pro'),
+                'label' => esc_html__('Typography', 'enteraddons'),
                 'selector' => '{{WRAPPER}} .infobox-card-ribbon',
             ]
         );

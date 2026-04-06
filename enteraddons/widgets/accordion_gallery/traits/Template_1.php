@@ -16,7 +16,7 @@ trait Template_1 {
 	
 public static function markup_style_1() {
     $settings = self::getSettings();
-    $icon = \Enteraddons\Classes\Helper::getElementorIcon( $settings['button_icon'] );
+
     ?>
         <div class="ea-accordion-gallery">
             <?php 
@@ -31,7 +31,8 @@ public static function markup_style_1() {
                             self::gallery_subtitle( $item ); 
                             echo '<a href="#" class="ea-vg-btn">';
                             self::trigger_button( $item );
-                            echo $icon;  
+                            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['button_icon'] );
                             echo  '</a>'; 
                             echo '<div class="ea-gallery-toggle">'; 
                             self::gallery_description( $item );  

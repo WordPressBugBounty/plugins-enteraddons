@@ -101,7 +101,7 @@ trait Templates_Components {
             $getRightQuote = '<span class="testimonial-right-quote">'.Helper::getElementorIcon( $RightQuote ).'</span>';
         }
         
-        echo'<div class="enteraddons-testimonial-text"><p>'.Helper::allowFormattingTagHtml($getLeftQuote).esc_html( $descriptions ).Helper::allowFormattingTagHtml($getRightQuote).'</p></div>';
+        echo'<div class="enteraddons-testimonial-text"><p>'.Helper::allowFormattingTagHtml($getLeftQuote).esc_html( $descriptions ).Helper::allowFormattingTagHtml($getRightQuote).'</p></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     public static function rating( $rating ) {

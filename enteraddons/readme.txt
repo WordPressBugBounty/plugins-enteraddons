@@ -4,9 +4,9 @@ Donate link: https://themelooks.com/
 Tags: elementor addons, elementor widget, elements, addons, elementor
 Requires PHP: 7.4
 Requires at least: 6.5
-Tested up to: 6.8.3
-Version: 2.2.6
-Stable tag: 2.2.6
+Tested up to: 6.9
+Version: 2.3.3
+Stable tag: 2.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -160,6 +160,33 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 
 == Change log ==
+
+= 2.3.3 =
+- Fixed CSRF vulnerable issue
+
+= 2.3.2 =
+- Fixed counter widget color option not working issue
+
+= 2.3.1 =
+- Fixed some minor issue
+
+= 2.3.0 =
+- Fixed Newsletter mailchimp not working issue
+- Check WordPress 6.9 compatibility
+
+= 2.2.10 =
+- Fixed Enter Addons Pro version compatibility issue
+
+= 2.2.9 =
+- Fixed minor bugs
+
+= 2.2.8 =
+- Enhanced overall security measures
+- Resolved XSS vulnerability in Countdown widget
+- Resolved XSS vulnerability in Image Comparison widget
+
+= 2.2.7 =
+- Fixed anchor tag nofollow, dofollow option not working issue
 
 = 2.2.6 =
 - Fixed infobox widget title style not working issue

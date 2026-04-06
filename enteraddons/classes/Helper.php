@@ -74,8 +74,15 @@ class Helper {
 	        if( !empty( $url['is_external'] ) && $url['is_external'] == 'on' ) {
 	            $target = '_blank';
 	        }
+            
+            //
+            $addNofollow = '';
 
-			return '<a class="'.esc_attr($class).'" href="'.esc_url( $url['url'] ).'" target="'.esc_attr( $target ).'">'.self::allowFormattingTagHtml( $innerData ).'</a>';
+            if( !empty( $url['nofollow'] ) ) {
+                $addNofollow = 'rel="nofollow"';
+            }
+
+			return '<a class="'.esc_attr($class).'" href="'.esc_url( $url['url'] ).'" '. $addNofollow.' target="'.esc_attr( $target ).'">'.self::allowFormattingTagHtml( $innerData ).'</a>';
 		}
 	}
 	/**

@@ -1199,7 +1199,7 @@ class Profile_Card extends Widget_Base {
         $this->add_control(
             'follower_text_color',
             [
-                'label' => esc_html__( 'Color', 'enteraddonst' ),
+                'label' => esc_html__( 'Color', 'enteraddons' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ea-profile-card .profile-content .profile-info .follower' => 'color: {{VALUE}}',
@@ -1209,7 +1209,7 @@ class Profile_Card extends Widget_Base {
         $this->add_responsive_control(
             'follower_text_margin',
             [
-                'label' => esc_html__( 'Margin', 'enteraddonst' ),
+                'label' => esc_html__( 'Margin', 'enteraddons' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1241,7 +1241,7 @@ class Profile_Card extends Widget_Base {
         $this->add_control(
             'pro_link_text_color',
             [
-                'label' => esc_html__( 'Color', 'enteraddonst' ),
+                'label' => esc_html__( 'Color', 'enteraddons' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ea-profile-card .profile-info .btn-link' => 'color: {{VALUE}}',
@@ -1259,14 +1259,14 @@ class Profile_Card extends Widget_Base {
             \Elementor\Group_Control_Text_Shadow::get_type(),
             [
                 'name' => 'pro_link_text_text_shadow',
-                'label' => esc_html__( 'Text Shadow', 'enteraddonst' ),
+                'label' => esc_html__( 'Text Shadow', 'enteraddons' ),
                 'selector' => '{{WRAPPER}} .ea-profile-card .profile-info .btn-link',
             ]
         );
         $this->add_responsive_control(
             'pro_link_text_margin',
             [
-                'label' => esc_html__( 'Margin', 'enteraddonst' ),
+                'label' => esc_html__( 'Margin', 'enteraddons' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1277,7 +1277,7 @@ class Profile_Card extends Widget_Base {
         $this->add_responsive_control(
             'pro_link_text_padding',
             [
-                'label' => esc_html__( 'Padding', 'enteraddonst' ),
+                'label' => esc_html__( 'Padding', 'enteraddons' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1320,7 +1320,7 @@ class Profile_Card extends Widget_Base {
         $this->add_control(
             'ratings_star_icon_color',
             [
-                'label' => esc_html__( 'Color', 'enteraddonst' ),
+                'label' => esc_html__( 'Color', 'enteraddons' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .ea-profile-card .profile-content .sb-star-rating i' => 'color: {{VALUE}}',
@@ -1331,14 +1331,14 @@ class Profile_Card extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'ratings_star_border',
-                'label' => esc_html__( 'Border', 'enteraddonst' ),
+                'label' => esc_html__( 'Border', 'enteraddons' ),
                 'selector' => '{{WRAPPER}} .ea-profile-card .profile-content .sb-star-rating i',
             ]
         );
         $this->add_responsive_control(
             'ratings_star_border_radius',
             [
-                'label' => esc_html__( 'Border Radius', 'enteraddonst' ),
+                'label' => esc_html__( 'Border Radius', 'enteraddons' ),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => [ 'px','%' ],
                 'range' => [
@@ -1361,7 +1361,7 @@ class Profile_Card extends Widget_Base {
         $this->add_responsive_control(
             'ratings_star_margin',
             [
-                'label' => esc_html__( 'Margin', 'enteraddonst' ),
+                'label' => esc_html__( 'Margin', 'enteraddons' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [
@@ -1372,7 +1372,7 @@ class Profile_Card extends Widget_Base {
         $this->add_responsive_control(
             'ratings_star_padding',
             [
-                'label' => esc_html__( 'Padding', 'enteraddonst' ),
+                'label' => esc_html__( 'Padding', 'enteraddons' ),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => [ 'px', '%', 'em' ],
                 'selectors' => [

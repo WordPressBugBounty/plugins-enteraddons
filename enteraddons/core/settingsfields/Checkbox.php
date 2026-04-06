@@ -61,8 +61,9 @@ trait Checkbox {
 		?>
 		<div class="eap-admin-field <?php echo esc_attr( $wrapTypeClass ); ?>" data-condition="<?php echo esc_html($conditionData); ?>">
 			<h4><?php echo esc_html( $args['title'] ); ?></h4>
+            
 			<div class="fb-field-group">
-			<input type="checkbox" value="yes" name="<?php echo $fieldName; ?>" <?php checked( esc_html( $value ), 'yes'  ); ?>  />
+			<input type="checkbox" value="yes" name="<?php echo esc_attr( $fieldName ); ?>" <?php checked( esc_html( $value ), 'yes'  ); ?>  />
 			<?php 
 			if( !empty( $args['description'] ) ) {
 				echo '<p>'.esc_html( $args['description'] ).'</p>';

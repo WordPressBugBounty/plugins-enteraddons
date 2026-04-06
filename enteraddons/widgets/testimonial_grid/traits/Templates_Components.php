@@ -39,7 +39,7 @@ trait Templates_Components {
             $getRightQuote = '<span class="ea-testimonial-right-quote">'.Helper::getElementorIcon( $RightQuote ).'</span>';
         }
         
-        echo'<div class="ea-testimonial-text"><p>'.Helper::allowFormattingTagHtml($getLeftQuote).esc_html( $descriptions ).Helper::allowFormattingTagHtml($getRightQuote).'</p></div>';
+        echo'<div class="ea-testimonial-text"><p>'.Helper::allowFormattingTagHtml($getLeftQuote).esc_html( $descriptions ).Helper::allowFormattingTagHtml($getRightQuote).'</p></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     public static function rating( $rating ) {

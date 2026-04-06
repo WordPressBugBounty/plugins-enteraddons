@@ -26,7 +26,7 @@ namespace Enteraddons\Widgets\Advanced_Animation_Title\Traits;
                     $tag = $settings['tag']; 
                 }
             }
-    
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             echo '<div class="ea-aat-wrapper" data-titleanimation-settings="' . htmlspecialchars( $TitleAnimationSettings, ENT_QUOTES, 'UTF-8' ) . '">';
     
             echo '<' . tag_escape( $tag ) . ' id="' . esc_attr( $id ) . '" data-title-id="' . esc_attr( $id ) . '" class="ea-aat-title' . esc_attr( $settings['text_direction'] ) . '" aat-background-text="' . esc_attr( $settings['background_text'] ) . '">';

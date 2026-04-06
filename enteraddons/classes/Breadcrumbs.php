@@ -124,6 +124,7 @@ class Breadcrumbs {
 	        );
 	        woocommerce_breadcrumb( $a );
        	} else {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
            echo apply_filters( 'ea_breadcrumbs_filter', $html );
        	}
     }

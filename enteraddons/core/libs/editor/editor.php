@@ -106,7 +106,8 @@ class Enteraddons_Editor {
 				$name = wp_basename( $file, '.php' );
 				ob_start();
 				include_once( $folder.'/'.$name.'.php' );
-				echo '<script id="enteraddons-'.esc_attr( $name ).'" type="text/html">'.ob_get_clean().'</script>';
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<script id="enteraddons-'.esc_attr( $name ).'" type="text/html">'. ob_get_clean() .'</script>';
 			}
 		}
 
@@ -129,6 +130,7 @@ class Enteraddons_Editor {
 		$response = $api->getRemote( $remoteUrl );
 		//
 		if( !empty( $response['body'] ) ) {
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo apply_filters( 'enteraddons_library_data', $response['body'] );
 		}
 

@@ -62,7 +62,7 @@ trait Colorpicker {
 		<div class="eap-admin-field <?php echo esc_attr( $wrapTypeClass ); ?>" data-condition="<?php echo esc_html( $conditionData ); ?>">
 			<h4><?php echo esc_html( $args['title'] ); ?></h4>
 			<div class="fb-field-group">
-			<input type="text" class="fb-color-field" name="<?php echo $fieldName ; ?>" value="<?php echo esc_html( $value ); ?>" />
+			<input type="text" class="fb-color-field" name="<?php echo esc_attr( $fieldName ); ?>" value="<?php echo esc_html( $value ); ?>" />
 			<?php 
 			if( !empty( $args['description'] ) ) {
 				echo '<p>'.esc_html( $args['description'] ).'</p>';

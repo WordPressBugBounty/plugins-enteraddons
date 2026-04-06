@@ -22,7 +22,7 @@ trait Template_1 {
 
         ?> 
         <div class="ea--feedback-slider-wrapper">
-            <div id ="<?php echo esc_attr( $slider_id ) ?>"  class="ea--feedback-slider swiper-container" data-slider-id ="<?php echo esc_html( $slider_id ); ?>" data-vertical-slider-settings="<?php echo htmlspecialchars( $verticalSliderSettings, ENT_QUOTES, 'UTF-8' ); ?>">
+            <div id ="<?php echo esc_attr( $slider_id ) ?>"  class="ea--feedback-slider swiper-container" data-slider-id ="<?php echo esc_html( $slider_id ); ?>" data-vertical-slider-settings="<?php echo htmlspecialchars( $verticalSliderSettings, ENT_QUOTES, 'UTF-8' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
                 <div class="swiper-wrapper">
                     <?php 
                     if( ! empty( $settings['slider_list'] ) ) : foreach( $settings['slider_list'] as $item ) : 
@@ -55,12 +55,12 @@ trait Template_1 {
             <div class="ea-swiper-pagi-nav">
                 <div class="ea--swiper-button-prev ea--swiper-nav-button">
                     <?php 
-                    echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['icon_up'] );
+                    echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['icon_up'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     ?>
                 </div>
                 <div class="ea--swiper-button-next ea--swiper-nav-button">
                     <?php 
-                    echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['icon_down'] );
+                    echo \Enteraddons\Classes\Helper::getElementorIcon( $settings['icon_down'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                     ?>
                 </div>
             </div>

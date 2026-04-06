@@ -35,20 +35,26 @@ if( !class_exists('Admin_Ajax_handler') ) {
 
         public function settings_data_save() {
             $getData = [];
-            // Check user permission
-            if( !current_user_can('manage_options') ) {
-                return;
+
+            if ( ! wp_doing_ajax() ) {
+                wp_die( 'Invalid request' );
             }
 
-            // Verifies the Ajax request
-            if( !check_ajax_referer( 'enteraddons-settings-data-save', 'nonce' ) ) {
-                wp_send_json_error();
+            // Check user permission
+            if( !current_user_can('manage_options') ) {
+               wp_die( 'Invalid request' );
             }
-            
-            $getPostedData = !empty( $_POST['data'] ) ? $_POST['data'] : '';
+
+            // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            $getPostedData = !empty( $_POST['data'] ) ? wp_unslash( $_POST['data'] ) : '';
 
             $data = array();
             parse_str( $getPostedData, $data );
+
+            if( !isset( $data['enteraddons_settings_nonce'] ) || ( isset( $data['enteraddons_settings_nonce'] ) &&  !wp_verify_nonce( wp_unslash( $data['enteraddons_settings_nonce'] ), 'enteraddons_settings_nonce_action' ) ) ) {
+                wp_send_json_error();
+               
+            }
 
             $getData['widgets'] = isset( $data['enteraddons_widgets'] ) && is_array( $data['enteraddons_widgets'] ) ? array_map( 'sanitize_text_field', $data['enteraddons_widgets'] ) : [];
 
@@ -57,8 +63,13 @@ if( !class_exists('Admin_Ajax_handler') ) {
             $getData['extensions'] = isset( $data['enteraddons_extensions'] ) && is_array( $data['enteraddons_extensions'] ) ? array_map( 'sanitize_text_field', $data['enteraddons_extensions'] ) : [];
             
             update_option( ENTERADDONS_OPTION_KEY,  $getData );
-            wp_send_json_success();
 
+            // Add WordPress admin notice
+            add_settings_error( 'enteraddons_messages', 'enteraddons_message', esc_html__( 'Settings Saved', 'enteraddons' ), 'updated' );
+
+
+            wp_send_json_success();
+            
         }
 
     }
