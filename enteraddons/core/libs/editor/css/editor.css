@@ -265,3 +265,272 @@ div#dialog_content_wrapper {
     background: transparent;
     color: #222;
 }*/
+.enteraddons-ai-form-wrap {
+    padding: 35px;
+    width: 100%;
+}
+.enteraddons-ai-form-wrap form {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.enteraddons-ai-form-wrap .textarea-top-title {
+margin: 0;
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 21px;
+}
+.enteraddons-ai-form-wrap form textarea {
+    width: 100%;
+    min-height: 120px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    transition: 0.2s;
+    background: #fbfbff;
+}
+.enteraddons-ai-form-wrap form textarea:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108,92,231,0.1);
+}
+.enteraddons-suggestions p {
+    text-transform: uppercase;
+}
+.enteraddons-suggestions {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+}
+.enteraddons-suggestions ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 13px;
+}
+.enteraddons-suggestions ul li {
+  background: #fbfbff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  border: 1px solid #e2e8f0;
+  transition: 0.3s;
+  font-weight: 500;
+}
+.enteraddons-suggestions ul li:hover {
+    /* background: #e52b5c1c !important; */
+    color: #E82A5C;
+    border-color: #E82A5C;
+}
+.enteraddons-suggestions ul li.suggested-for-more {
+    background-color: transparent;
+    border-color: #e2e8f0;
+}
+.enteraddons-command-dropdown-close {
+    position: absolute;
+    top: -12px;
+    z-index: 9999999;
+    right: 0;
+    background: #E82A5C;
+    color: #fff;
+    width: 19px;
+    height: 19px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.enteraddons-model-type select {
+    border-color: #e2e8f0;
+    background: #fbfbff;
+    border-radius: 6px;
+    height: 30px;
+    font-size: 15px;
+}
+.enteraddons-ai-generate-btn {
+    background: linear-gradient(to right, #E82A5C, #464163);
+    padding: 12px 30px;
+    border: 0px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ea-loader-progress-bar {
+  /* height: 4px; */
+  /* width: 130px; */
+  /* --c:no-repeat linear-gradient(#E82A5C 0 0);
+  background: var(--c),var(--c),#464163;
+  background-size: 60% 100%;
+  animation: l16 3s infinite;
+    margin: 0 auto; */
+}
+@keyframes l16 {
+  0%   {background-position:-150% 0,-150% 0}
+  66%  {background-position: 250% 0,-150% 0}
+  100% {background-position: 250% 0, 250% 0}
+}
+
+.enteraddons-ai-form-btn-wrap {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.enteraddons-ai-form-btn-wrap p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.enteraddons-command-dropdown {
+
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    position: absolute;
+    border-radius: 8px;
+    top: 0;
+    max-height: 225px;
+    overflow-y: auto;
+    z-index: 999;
+    padding: 11px 0px 0px 5px;
+    min-height: 225px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.enteraddons-command-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 5px;
+    align-items: baseline;
+}
+
+.enteraddons-command-dropdown li:hover,
+.enteraddons-command-dropdown li.active {
+    background: #f3f4f6;
+}
+
+.enteraddons-command-dropdown small {
+    font-size: 11px;
+    color: #777;
+    text-align: left;
+}
+
+.ea-loader-progress-bar {
+    display: none;
+}
+
+.dialog-ai-widget-content-wrapper {
+    left: 0 !important;
+}
+.dialog-widget-content.dialog-ai-widget-content-wrapper {
+    max-width: 300px !important;
+}
+.enteraddons-ai-form-wrap form {
+    width: 100%;
+    margin: 0;
+}
+.enteraddons-ai-form-wrap {
+    padding: 15px 0px 10px 12px;
+}
+
+.ea-ai-pre-loader {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 6px;
+    padding-left: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.ea-ai-loader {
+  width: 40px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+.enteraddons-ai-messages {
+    background: #fbfbff;
+    border-radius: 10px;
+    border: 0.5px solid #e2e8f0;
+    padding: 1rem;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 250px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+}
+
+.enteraddons-ai-messages .msg {
+    max-width: 100%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.ea-ai-pre-loader,
+.enteraddons-ai-messages .msg.bot {
+    align-self: flex-start;
+    background: #ffffff;
+    border: 0.5px solid #e2e8f0;
+    color: #141413;
+    text-align: left;
+}
+.enteraddons-ai-messages .msg.user {
+    align-self: flex-end;
+    background: linear-gradient(to right, #E82A5C, #464163);
+    color: #fff;
+    word-wrap: break-word;
+}
+.dialog-type-lightbox {
+    z-index: 99999999 !important;
+}
+
+.enteraddons-ai-popup {
+    background-image: linear-gradient(to right, #E82A5C, #464163);
+    border: unset;
+    border-radius: 6px;
+    box-shadow: unset;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    height: 30px;
+    outline: unset;
+    padding: 7px;
+    width: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.enteraddons-ai-popup:hover {
+    opacity: 0.8;
+}
+.enteraddons-prompt-field-block {
+    position: relative;
+}

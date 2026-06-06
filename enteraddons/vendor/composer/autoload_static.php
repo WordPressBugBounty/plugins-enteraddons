@@ -52,6 +52,10 @@ class ComposerStaticInite6bfa544cf8fe610a42e33fa2e28064a
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Enteraddons\\AI\\AI_API' => __DIR__ . '/../..' . '/core/ai/AI_API.php',
+        'Enteraddons\\AI\\AI_Slash_Commands' => __DIR__ . '/../..' . '/core/ai/AI_Slash_Commands.php',
+        'Enteraddons\\AI\\AI_Template_Import' => __DIR__ . '/../..' . '/core/ai/AI_Template_Import.php',
+        'Enteraddons\\AI\\Template_Library_Source' => __DIR__ . '/../..' . '/core/ai/Template_Library_Source.php',
         'Enteraddons\\Admin\\Admin' => __DIR__ . '/../..' . '/admin/Admin.php',
         'Enteraddons\\Admin\\Admin_API' => __DIR__ . '/../..' . '/admin/inc/Admin_API.php',
         'Enteraddons\\Admin\\Admin_Ajax_handler' => __DIR__ . '/../..' . '/admin/inc/Admin_Ajax_handler.php',

@@ -24,7 +24,7 @@ trait Integration {
         if( !empty( $integration['integration']['google_api_key'] ) ) {
             $googleApiKey = $integration['integration']['google_api_key'];
         }
-
+        
         ?>
             <div data-tab="integration">
                 <div class="container">

@@ -3,10 +3,10 @@ Contributors: ThemeLooks, rahi6039, faruqahmed190, looksweb, linkonomayer
 Donate link: https://themelooks.com/
 Tags: elementor addons, elementor widget, elements, addons, elementor
 Requires PHP: 7.4
-Requires at least: 6.5
-Tested up to: 6.9
-Version: 2.3.3
-Stable tag: 2.3.3
+Requires at least: 6.9
+Tested up to: 7.0
+Version: 2.3.4
+Stable tag: 2.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,7 @@ The modular-based, lightweight, and completely customizable add-on will surely b
 	<li>10+ Free Ready Pages Template</li>
 	<li>4+ Free Ready Header/Footer Template</li>
 	<li>Header & Footer Builder</li>
+	<li>AI Builder</li>
 	<li>WooCommerce Widgets</li>
 	<li>Post Widgets</li>
 	<li>Ready Template Import</li>
@@ -160,6 +161,12 @@ Learn more about how [Appsero collects and uses this data](https://appsero.com/p
 
 
 == Change log ==
+
+= 2.3.4 =
+- Fixed WordPress 7.0 compatibility issue
+- Added AI builder
+- Fixed Elementor latest version conflict issue
+- Fixed some other issues
 
 = 2.3.3 =
 - Fixed CSRF vulnerable issue

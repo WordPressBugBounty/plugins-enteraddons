@@ -77,7 +77,7 @@ trait Templates_Components {
     public static function socialIcons() {
         $settings = self::getSettings();
         
-        if( !empty( $settings['social'] ) ):
+        if( !empty( $settings['social'] ) && is_array( $settings['social'] ) ):
         ?>
         <div class="enteraddons-team-social-icon">
             <?php 

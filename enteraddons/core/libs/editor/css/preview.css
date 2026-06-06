@@ -25,13 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-staraddons-temp-lib:before {
+.icon-enteraddons-temp-lib:before {
   content: "\e900";
   color: #fff;
 }
 
+.elementor-add-section-area-button.enteraddons-ai-popup,
 .elementor-add-section-area-button.add-enteraddons-template {
   background-image: linear-gradient(to right, #E82A5C , #464163);
   justify-content: center;
   align-items: center;
 }
+.elementor-add-section-area-button.enteraddons-ai-popup {
+    color: #fff;
+}
+

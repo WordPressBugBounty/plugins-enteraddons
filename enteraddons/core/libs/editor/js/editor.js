@@ -6,11 +6,23 @@
     obj = {
 
         modal: false,
-
         onPreviewLoaded: function() {
 
+            const $that = this;
+
+            const target = $s('.MuiStack-root').eq(1);
+            if (!$s('.MuiStack-root').find('.custom-icon').length ) {
+                target.prepend('<div class="elementor-add-section-area-button enteraddons-ai-popup">AI</div>')
+                
+                $s(document).on("click", ".enteraddons-ai-popup", function () {
+                    $that.aiModal()
+                })
+                
+            }
+
             this.addTemplateButton(),
-            window.elementor.$previewContents.on("click", ".add-enteraddons-template", _.bind(this.templateModal, this) )
+            window.elementor.$previewContents.on("click", ".add-enteraddons-template", _.bind(this.templateModal, this))
+            window.elementor.$previewContents.on("click", ".enteraddons-ai-popup", _.bind(this.aiModal, this))
 
         },
         addTemplateButton: function() {
@@ -20,7 +32,7 @@
 
             if( 0 < s.length ) {
                 var t = s.text();
-                    t =  t.replace( '<div class="elementor-add-section-drag-title', '<div class="elementor-add-section-area-button add-enteraddons-template"><i class="icon-staraddons-temp-lib"></i></div><div class="elementor-add-section-drag-title' );
+                    t =  t.replace( '<div class="elementor-add-section-drag-title', '<div class="elementor-add-section-area-button add-enteraddons-template"><i class="icon-enteraddons-temp-lib"></i></div><div class="elementor-add-section-area-button enteraddons-ai-popup">AI</div><div class="elementor-add-section-drag-title' );
                     s.text(t);
             }
         },
@@ -84,8 +96,8 @@
                         beforeSend: function() {
                             h.showLoadingView()
                         },
-                        success: function( res ) {
-                            
+                        success: function (res) {
+                                                        
                             $that.templates = res.templates;
                             $that.filters = res.filters;
                             $that.library_cache[t] = {templates:res.templates,filters:res.filters}
@@ -136,7 +148,7 @@
                             with_page_settings: true 
                         },
                         success: function( data ) {
-                            console.log( data );
+                            
                             $e.run('document/elements/import', {
                                 model: window.elementor.elementsModel,
                                 data: data,
@@ -319,8 +331,304 @@
             // App mounting
             app.mount('#enteraddonsModal');
         },
-        closeModal: function() {
+        aiModal: function () {
+
+            let $oi = this;
+            this.getModal().show();
+
+            /***********************************************
+             * Create app
+            ************************************************/
+            const app = Vue.createApp({
+
+                data() {
+                    return {
+                        source: enteraddonsGeteDitorData.api_source,
+                        proVersionUrl:'https://enteraddons.com/',
+                        version_type: enteraddonsGeteDitorData.version_type,
+                        prompt_text: ''
+                    }
+                },
+                methods: {
+                    promptTextRoot(v) {
+                        this.prompt_text = v;
+                    },
+                },
+                watch: {
+                    /*templates() {
+                        this.$emit( 'templates', this.templates )
+                    },
+                    filters() {
+                        this.$emit( 'filters', this.filters )
+                    }*/
+                },
+                mounted() {
+                    
+                }
+
+            });
+
+            /***********************************************
+             * Component template library header
+            ************************************************/
+            app.component('template-ai-library-header', {
+                template: '#enteraddons-template-ai-library-header',
+                props: {
+                    isPreview: Boolean,
+                    set_active_tab: String
+                },
+                data() {
+                    return {}
+                },
+                methods: {
+                    closeModal() {
+                        $oi.getModal().hide()
+                        setTimeout(function () {
+                            $s('.dialog-widget-content').removeClass('dialog-ai-widget-content-wrapper');
+                        }, 500 )
+                        
+                    }
+                }
+            })
+
+            
+            /***********************************************
+             * Component template library content
+            ************************************************/
+            app.component('template-ai-library-content', {
+                template: '#enteraddons-template-ai-library-content',
+                data() {
+                    return {
+                        form: {
+                            prompt_text: '',
+                            model_type: localStorage.getItem('ea_ai_model_type') || 'EA-AI EA1'
+                        },
+                        loading: false,
+                        responseMessage: '',
+                        chatHistory: JSON.parse(localStorage.getItem("ea_ai_builder_chat")) || [],
+                        showCommands: false,
+                        selectedIndex: 0,
+                        searchQuery: '',
+                        commands: enteraddonsGeteDitorData.slash_commands || []
+
+                    }
+                },
+                methods: {
+
+                    setModelType(value) {
+                        this.form.model_type = value;
+                        localStorage.setItem('ea_ai_model_type', value);
+                    },
+
+                    async aiRequest(i) {
+                        
+                        let that = this;
+
+                        this.responseMessage = '';
+
+                        try {
+
+                            //
+                            const chatContainer = $s('.enteraddons-ai-messages');
+                            if (chatContainer.length) {
+                                chatContainer.animate({
+                                    scrollTop: chatContainer[0].scrollHeight
+                                }, 400);
+                            }
+
+                            //
+                            $s('.enteraddons-suggestions').hide();
+                            $s('.enteraddons-ai-generate-btn').hide();
+                            $s('.ea-loader-progress-bar').html('<div class="ea-ai-pre-loader"><div class="ea-ai-loader"></div><p>Thinking....</p></div>').show();
+
+                            const promptText = this.form.prompt_text;
+
+                            var $e = window.parent.$e;
+                                let n = {
+                                    unique_id: enteraddonsGeteDitorData.page_id, 
+                                    data: {
+                                        edit_mode: !0, 
+                                        display: !0, 
+                                        template_id: enteraddonsGeteDitorData.page_id,
+                                        prompt_text: this.form.prompt_text,
+                                        model_type: this.form.model_type,
+                                        with_page_settings: true
+                                    },
+                                    success: function( data ) {
+
+                                        $s('.ea-loader-progress-bar').html('<div class="ea-ai-pre-loader"><div class="ea-ai-loader"></div><p>Processing....</p></div>');
+
+                                        setTimeout(function () {
+
+                                            $s('.ea-loader-progress-bar').html('<div class="ea-ai-pre-loader"><div class="ea-ai-loader"></div><p>Finalizing....</p></div>');
+
+                                            setTimeout(function () {
+
+                                                $e.run('document/elements/import', {
+                                                    model: window.elementor.elementsModel,
+                                                    data: data,
+                                                    options: {}
+                                                });
+
+                                                that.responseMessage = 'Build Successfully';
+                                                that.chatHistory.push({ prompt: promptText, response: 'Build Successfully', time: Date.now() });
+                                                localStorage.setItem("ea_ai_builder_chat", JSON.stringify(that.chatHistory));
+                                                $s('.ea-loader-progress-bar').hide();
+                                                $s('.enteraddons-suggestions').show();
+                                                $s('.enteraddons-ai-generate-btn').show();
+
+                                            }, 500);
+
+                                        }, 600);
+
+                                    },
+                                    error: function(err) {
+                                        that.responseMessage = err;
+                                        that.chatHistory.push({ prompt: promptText, response: err, time: Date.now() });
+                                        localStorage.setItem("ea_ai_builder_chat", JSON.stringify(that.chatHistory));
+
+                                        $s('.ea-loader-progress-bar').hide();
+                                        $s('.enteraddons-suggestions').show();
+                                        $s('.enteraddons-ai-generate-btn').show();
+
+                                    },
+                                    complete: function () {
+                                        
+                                    }
+                                }
+                                                
+                                elementorCommon.ajax.addRequest("get_ai_template_data", n);
+
+
+                        } catch (error) {
+                            this.responseMessage = error;
+                        } finally {}
+
+                    },
+
+                    handleInput(e) {
+                        const value = this.form.prompt_text;
+                        const cursorPos = e.target.selectionStart;
+
+                        // Get text before cursor
+                        const textBeforeCursor = value.substring(0, cursorPos);
+
+                        // Match `/something`
+                        const match = textBeforeCursor.match(/\/(\w*)$/);
+
+                        if (match) {
+                            this.showCommands = true;
+                            this.searchQuery = '/' + match[1];
+                        } else {
+                            this.showCommands = false;
+                        }
+                    },
+                    handleKeydown(e) {
+
+                        if (!this.showCommands) return;
+
+                        if (e.key === 'ArrowDown') {
+                            e.preventDefault();
+                            this.selectedIndex =
+                                (this.selectedIndex + 1) % this.filteredCommands.length;
+                        }
+
+                        if (e.key === 'ArrowUp') {
+                            e.preventDefault();
+                            this.selectedIndex =
+                                (this.selectedIndex - 1 + this.filteredCommands.length) %
+                                this.filteredCommands.length;
+                        }
+
+                        if (e.key === 'Enter') {
+                            e.preventDefault();
+                            this.selectCommand(this.filteredCommands[this.selectedIndex]);
+                        }
+
+                        if (e.key === 'Escape') {
+                            this.showCommands = false;
+                        }
+                    },
+                    selectCommand(cmd) {
+                        const textarea = document.querySelector('textarea');
+                        const cursorPos = textarea.selectionStart;
+
+                        const value = this.form.prompt_text;
+
+                        // Replace `/text` with selected command
+                        const newText = value.replace(/\/(\w*)$/, cmd.label + ' ');
+
+                        this.form.prompt_text = newText;
+
+                        this.showCommands = false;
+                        this.selectedIndex = 0;
+
+                        this.$nextTick(() => {
+                            textarea.focus();
+                        });
+                    },
+                    selectSuggestion(cmd) {
+                        const textarea = document.querySelector('textarea');
+
+                        if ( cmd != '/' ) {
+                            this.searchQuery = cmd;
+                            this.form.prompt_text = this.filteredCommands[0].label;
+                        }
+                        //
+                        if ( cmd == '/' ) {
+                            this.showCommands = true;
+                            this.searchQuery = cmd;
+                            this.form.prompt_text = cmd;
+                        }
+
+                    }
+
+                },
+                watch: {
+                    chatHistory() {
+                        this.$nextTick(() => {
+                            const el = this.$refs.chatMessages;
+                            if (el) el.scrollTop = el.scrollHeight;
+                        });
+                    }
+                },
+                mounted() {
+                    this.$nextTick(() => {
+                        const el = this.$refs.chatMessages;
+                        if (el) el.scrollTop = el.scrollHeight;
+                    });
+                },
+                computed: {
+                    filteredCommands() {
+
+                        if (!this.searchQuery) return this.commands;
+                        // normalize input (remove slash, lowercase)
+                        const query = this.searchQuery.replace('/', '').toLowerCase().trim();
+                        const words = query.split(' ');
+                        
+                        return this.commands.filter(cmd => {
+                            const text = (cmd.command + ' ' + cmd.label).toLowerCase();
+                            // match ALL words
+                            return words.every(word => text.includes(word));
+
+                        });
+
+                    }
+                }
+              
+            })
+
+            // Add components in lightbox header and message area
+            $s('.dialog-widget-content').addClass('dialog-ai-widget-content-wrapper');
+            $s('.dialog-lightbox-header').html('<template-ai-library-header></template-ai-library-header>');
+            $s('.dialog-lightbox-message').html('<template-ai-library-content></template-ai-library-content>');
+            // App mounting
+            app.mount('#enteraddonsModal');
+
+        },
+        closeModal: function () {
             this.getModal().hide()
+            
         },
         getModal: function() {
 
@@ -365,6 +673,9 @@
     $s(window).on("elementor:init", function() {
         window.elementor.on("preview:loaded", window._.bind( obj.onPreviewLoaded, obj ) );  
     })
+
+
+
 
 
 })(jQuery);

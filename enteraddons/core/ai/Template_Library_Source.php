@@ -1,5 +1,5 @@
 <?php
-namespace Enteraddons\Editor;
+namespace Enteraddons\AI;
 /**
  * Enteraddons admin class
  *
@@ -11,14 +11,14 @@ namespace Enteraddons\Editor;
  *
  */
 use Elementor\TemplateLibrary\Source_Base;
-class Library_Source extends Source_Base {
+class Template_Library_Source extends Source_Base {
 
 	public function get_id() {
-		return 'enteraddons-template-library-manager';
+		return 'enteraddons-ai-template-manager';
 	}
 
 	public function get_title() {
-		return esc_html__( 'EnterAddons Template Library Manager', 'enteraddons' );
+		return esc_html__( 'EnterAddons AI Template Manager', 'enteraddons' );
 	}
 
 	public function register_data() {}
@@ -56,12 +56,12 @@ class Library_Source extends Source_Base {
 
 		$data = $getdata[0];
 
-		$data['content'] = $this->replace_elements_ids( $data['content'] );
-
+		$data['content'] = $this->replace_elements_ids( $data['content']  );
 		$data['content'] = $this->process_export_import_content( $data['content'], 'on_import' );
 
 		$post_id  = $getdata[1];
-		$document = \Elementor\Plugin::instance()->documents->get( $post_id );
+		
+        $document = \Elementor\Plugin::$instance->documents->get($post_id);
 
 		if ( $document ) {
 			$data['content'] = $document->get_elements_raw_data( $data['content'], true );

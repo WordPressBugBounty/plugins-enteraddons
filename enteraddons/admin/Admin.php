@@ -21,6 +21,7 @@ if( !class_exists('Admin') ) {
 			add_action( 'admin_enqueue_scripts', [ __CLASS__, 'admin_scripts' ] );
 			add_action( 'admin_footer', [ __CLASS__, 'admin_footer_inject' ] );
 			add_action( 'admin_init', [ __CLASS__, 'admin_init_load' ] );
+            
 			$this->init();
 		}
 		public static function getInstance() {
@@ -175,6 +176,8 @@ if( !class_exists('Admin') ) {
             </div>
             <?php
 		}
+
+
 
 	}
 

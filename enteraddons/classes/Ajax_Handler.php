@@ -58,7 +58,7 @@ if( !class_exists('Ajax_Handler') ) {
 			if( !empty( $email ) && !empty( $listid ) ) {
 
                 // Mailchimp credentials
-                $api_key = $getKey['integration']['mailchimp_token']; // "5fba17bc0d03c75e291441abf2f5e72f-us12"
+                $api_key = $getKey['integration']['mailchimp_token'] ?? '';
                 $list_id = $listid;
                 $dc      = substr($api_key, strpos($api_key, '-') + 1); // datacenter
 
@@ -75,7 +75,7 @@ if( !class_exists('Ajax_Handler') ) {
                 $response = wp_remote_post($url, [
                     'method'      => 'POST',
                     'headers'     => [
-                        'Authorization' => "Basic " . base64_encode("user:$api_key"),
+                        'Authorization' => !empty( $api_key ) ? "Basic " . base64_encode("user:$api_key") : '',
                         'Content-Type'  => 'application/json'
                     ],
                     'body'        => json_encode($body),

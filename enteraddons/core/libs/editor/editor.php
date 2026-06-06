@@ -28,6 +28,8 @@ class Enteraddons_Editor {
 
 		// init import class
 		new Import();
+        //
+        new \Enteraddons\AI\AI_Template_Import();
 
 	}
 	private function callAPI() {
@@ -75,14 +77,21 @@ class Enteraddons_Editor {
 			'1.0',
 			true
 		);
+
+        $slashCommands = new \Enteraddons\AI\AI_Slash_Commands();
+        $getSlashCommands = $slashCommands->section_commands_list();
+
 		wp_localize_script(
 			'enteraddons-editor-script',
 			'enteraddonsGeteDitorData',
-			array( 
+			array(
 				'api_source'   => ENTERADDONS_API_SOURCE, 
 				'enter_nonce'   => wp_create_nonce( 'enteraddons-fig' ), 
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'version_type' => \Enteraddons\Classes\Helper::versionType()
+				'version_type' => \Enteraddons\Classes\Helper::versionType(),
+                'nonce'    => wp_create_nonce('ai_nonce'),
+                'page_id'  => get_the_ID(),
+                'slash_commands' => $getSlashCommands
 			)
 		);
 
@@ -115,13 +124,14 @@ class Enteraddons_Editor {
 
 	public function library_data() {
 
-		if ( ! current_user_can( 'edit_posts' ) || ( empty( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], 'enteraddons-fig' ) ) ) {
+		if ( ! current_user_can( 'edit_posts' ) || ( empty( $_POST['nonce'] ) || ! wp_verify_nonce( wp_unslash( $_POST['nonce'] ) , 'enteraddons-fig' ) ) ) {
 			die();
 		}
 
 		// get tab id
+        $tabId = '';
 		if( isset( $_POST['id'] ) ) {
-			$tabId = sanitize_text_field( $_POST['id'] );
+			$tabId = sanitize_text_field( wp_unslash( $_POST['id'] ) );
 		}
 
 		$api = $this->callAPI();

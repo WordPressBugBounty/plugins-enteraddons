@@ -314,4 +314,12 @@ class Helper {
 		
 	}
 
+    public static function ea_ai_models_html() {
+
+        $html = '<option selected value="EA-AI EA1">'.esc_html__( 'EA-AI EA1', 'enteraddons' ).'</option>';
+        return apply_filters( 'ea_ai_models_html', $html );
+	}
+
+
+
 } // Class End

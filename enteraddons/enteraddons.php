@@ -3,7 +3,7 @@
  * Plugin Name:       Enter Addons
  * Plugin URI:        https://themelooks.org/demo/enteraddons
  * Description:       Ultimate Template Builder for Elementor
- * Version:           2.3.3
+ * Version:           2.3.4
  * Author:            ThemeLooks
  * Author URI:        https://themelooks.com
  * License:           GPL v2 or later
@@ -20,7 +20,7 @@
 
 // Version constant
 if (!defined('ENTERADDONS_VERSION')) {
-    define('ENTERADDONS_VERSION', '2.3.3');
+    define('ENTERADDONS_VERSION', '2.3.4');
 }
 // Current phpversion
 if (!defined('ENTERADDONS_CURRENT_PHPVERSION')) {
@@ -162,6 +162,7 @@ final class Enteraddons
         new \Enteraddons\Classes\Editor_Widgets_Assets();
         // Ajax Handler
         new \Enteraddons\Classes\Ajax_Handler();
+        
     }
 
     private function includeFiles()
@@ -307,3 +308,4 @@ final class Enteraddons
  * 
  */
 Enteraddons::getInstance();
+
